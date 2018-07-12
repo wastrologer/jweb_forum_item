@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.CommentMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="commentId != null ">
+                AND comment.comment_id = #{commentId}
+            </if>
+            <if test="userId != null ">
+                AND comment.user_id =#{userId}
+            </if>
+            <if test="userNickname != null ">
+                AND comment.user_nickname =#{userNickname}
+            </if>
+            <if test="commentContent != null ">
+                AND comment.comment_content  like CONCAT('%',#{commentContent},'%' )
+            </if>
+            <if test="essayId != null ">
+                AND comment.essay_id =#{essayId}
+            </if>
+<!--            <if test="commentGrade != null and commentGrade ==1and seniorCommentId == null ">
+                AND comment.senior_comment_id =NULL
+            </if>-->
+            <if test="commentGrade != null ">
+                AND comment.comment_grade = #{commentGrade}
+            </if>
+            <if test="seniorCommentId != null ">
+                AND comment.senior_comment_id = #{seniorCommentId}
+            </if>
+            <if test="commentSequence != null ">
+                AND comment.comment_sequence =#{commentSequence}
+            </if>
+            <if test="publishTime != null ">
+                AND  comment.publish_time>#{publishTime}
+            </if>
+            <if test="topicId != null ">
+                AND comment.topic_id =#{topicId}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getCommentByCondition" resultType="com.pojo.Comment" parameterType="com.pojo.Comment" >
+        select
+        *
+        from comment
+        <include refid="whereSql"/>
+            ORDER BY publish_time
+    </select>
+
+    <select id="countCommentByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Comment" >
+        SELECT
+        COUNT(*)
+        from comment
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addComment"  parameterType="com.pojo.Comment"  >
+        insert into comment
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="commentId != null" >
+                comment_id,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="essayId != null" >
+                essay_id,
+            </if>
+            <if test="commentContent != null" >
+                comment_content,
+            </if>
+            <if test="commentGrade != null" >
+                comment_grade,
+            </if>
+            <if test="commentSequence != null" >
+                comment_sequence,
+            </if>
+            <if test="seniorCommentId != null" >
+                senior_comment_id,
+            </if>
+            <if test="publishTime != null" >
+                publish_time,
+            </if>
+            <if test="topicId != null" >
+                topic_id,
+            </if>
+            <if test="userNickname != null" >
+                user_nickname,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="recommendNum != null" >
+                recommend_num,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="commentId != null" >
+                #{commentId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="essayId != null" >
+                #{essayId,jdbcType=BIGINT},
+            </if>
+            <if test="commentContent != null" >
+                #{commentContent,jdbcType=VARCHAR},
+            </if>
+            <if test="commentGrade != null" >
+                #{commentGrade,jdbcType=SMALLINT},
+            </if>
+            <if test="commentSequence != null" >
+                #{commentSequence,jdbcType=SMALLINT},
+            </if>
+            <if test="seniorCommentId != null" >
+                #{seniorCommentId,jdbcType=BIGINT},
+            </if>
+            <if test="publishTime != null" >
+                #{publishTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="topicId != null" >
+                #{topicId,jdbcType=SMALLINT},
+            </if>
+            <if test="userNickname != null" >
+                #{userNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="recommendNum != null" >
+                #{recommendNum,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateComment" parameterType="com.pojo.Comment">
+        update comment
+        <set>
+            <if test="userId != null ">
+                comment.user_id =#{userId},
+            </if>
+            <if test="userNickname != null ">
+                comment.user_nickname =#{userNickname},
+            </if>
+            <if test="essayId != null ">
+                comment.essay_id = #{essayId},
+            </if>
+            <if test="commentContent != null ">
+                comment.comment_content =#{commentContent},
+            </if>
+            <if test="commentGrade != null ">
+                comment.comment_grade =#{commentGrade},
+            </if>
+            <if test="commentSequence != null ">
+                comment.comment_sequence =#{commentSequence},
+            </if>
+            <if test="publishTime != null ">
+                comment.publish_time = #{publishTime},
+            </if>
+            <if test="seniorCommentId != null ">
+                comment.senior_comment_id = #{seniorCommentId},
+            </if>
+            <if test="topicId != null ">
+                comment.topic_id =#{topicId}
+            </if>
+            <if test="recommendNum != null ">
+                comment.recommend_num =comment.recommend_num+#{recommendNum}
+            </if>
+        </set>
+        where comment.comment_id =#{commentId}
+    </update>
+
+    <update id="updateCommentBatch"  parameterType="com.pojo.User">
+        update comment
+        <set>
+            <if test="nickname != null">
+                comment.user_nickname =#{nickname},
+            </if>
+        </set>
+        where comment.user_id =#{userId}
+    </update>
+
+    <delete id="deleteCommentById" parameterType="java.lang.Integer">
+        delete from `comment`
+        where comment.comment_id =#{commentId}
+    </delete>
+</mapper>

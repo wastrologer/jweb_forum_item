@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.ConcernMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="concernId != null ">
+                AND concern.concern_id = #{concernId}
+            </if>
+            <if test="userFromId != null ">
+                AND concern.user_from_id =#{userFromId}
+            </if>
+            <if test="userToId != null ">
+                AND concern.user_to_id =#{userToId}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getConcernByCondition" resultType="com.pojo.Concern" parameterType="com.pojo.Concern" >
+        select
+        *
+        from concern
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countConcernByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Concern" >
+        SELECT
+        COUNT(*)
+        from concern
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addConcern"  parameterType="com.pojo.Concern"  >
+        insert into concern
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="concernId != null" >
+                concern_id,
+            </if>
+            <if test="userFromId != null" >
+                user_from_id,
+            </if>
+            <if test="userToId != null" >
+                user_to_id,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="concernId != null" >
+                #{concernId,jdbcType=BIGINT},
+            </if>
+            <if test="userFromId != null" >
+                #{userFromId,jdbcType=BIGINT},
+            </if>
+            <if test="userToId != null" >
+                #{userToId,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateConcern" parameterType="com.pojo.Concern">
+        update concern
+        <set>
+            <if test="userFromId != null ">
+                concern.user_from_id =#{userFromId},
+            </if>
+            <if test="userToId != null ">
+                concern.user_to_id =#{userToId}
+            </if>
+        </set>
+        where concern.concern_id =#{concernId}
+    </update>
+
+    <delete id="deleteConcernById" parameterType="java.lang.Integer">
+        delete from `concern`
+        where concern.concern_id =#{concernId}
+    </delete>
+</mapper>

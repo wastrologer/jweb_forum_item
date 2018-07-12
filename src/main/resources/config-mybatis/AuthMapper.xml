@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.AuthMapper" >
+    <select id="getAuthByAccurateCondition" resultType="com.pojo.Auth" parameterType="com.pojo.Auth" >
+        select
+        *
+        from auth
+        <where>
+            1=1
+            <if test="authId != null">
+                AND auth_id =#{authId}
+            </if>
+            <if test="authName != null ">
+                AND auth_name =#{authName}
+            </if>
+            <if test="authType != null ">
+                AND auth_type=#{authType}
+            </if>
+        </where>
+    </select>
+    <select id="getAuthByUserName" resultType="com.pojo.Auth" parameterType="java.lang.String">
+        select
+        *
+        from auth
+        INNER JOIN user ON user.auth_id=auth.auth_id
+        AND user.user_name=#{name }
+    </select>
+</mapper>

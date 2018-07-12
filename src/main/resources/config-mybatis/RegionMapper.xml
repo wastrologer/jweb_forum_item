@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.RegionMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="regionId != null ">
+                AND region.region_id = #{regionId}
+            </if>
+            <if test="provinceName != null and provinceName!=''">
+                AND region.province_name =#{provinceName}
+            </if>
+            <if test="cityName != null and cityName!=''">
+                AND region.city_name =#{cityName}
+            </if>
+            <if test="regionName != null and regionName!=''">
+                AND region.region_name =#{regionName}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getRegionByCondition" resultType="com.pojo.Region" parameterType="com.pojo.Region" >
+        select
+        *
+        from region
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countRegionByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Region" >
+        SELECT
+        COUNT(*)
+        from region
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addRegion"  parameterType="com.pojo.Region"  >
+        insert into region
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="regionId != null" >
+                region_id,
+            </if>
+            <if test="provinceName != null" >
+                province_name,
+            </if>
+            <if test="cityName != null" >
+                city_name,
+            </if>
+            <if test="regionName != null" >
+                region_name,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="regionId != null" >
+                #{regionId,jdbcType=INTEGER},
+            </if>
+            <if test="provinceName != null" >
+                #{provinceName,jdbcType=VARCHAR},
+            </if>
+            <if test="cityName != null" >
+                #{cityName,jdbcType=VARCHAR},
+            </if>
+            <if test="regionName != null" >
+                #{regionName,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+
+        </trim>
+    </insert>
+
+    <update id="updateRegion" parameterType="com.pojo.Region">
+        update region
+        <set>
+            <if test="provinceName != null and provinceName!=''">
+                region.province_name =#{provinceName},
+            </if>
+            <if test="cityName != null and cityName!=''">
+                region.city_name =#{cityName},
+            </if>
+            <if test="regionName != null and regionName!=''">
+                region.region_name =#{regionName}
+            </if>
+        </set>
+        where region.region_id =#{regionId}
+    </update>
+
+    <delete id="deleteRegionById" parameterType="java.lang.Integer">
+        delete from `region`
+        where region.region_id =#{regionId}
+    </delete>
+</mapper>

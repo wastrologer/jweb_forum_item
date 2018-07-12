@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.GoldMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="goldRecordId != null ">
+                AND gold.gold_record_id = #{goldRecordId}
+            </if>
+            <if test="goldRecordTime != null ">
+                AND gold.gold_record_time =#{goldRecordTime}
+            </if>
+            <if test="goldNum != null ">
+                AND gold.gold_num =#{goldNum}
+            </if>
+            <if test="goldUserId != null ">
+                AND gold.gold_user_id =#{goldUserId}
+            </if>
+            <if test="goldReason != null ">
+                AND gold.gold_reason =#{goldReason}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getGoldByCondition" resultType="com.pojo.Gold" parameterType="com.pojo.Gold" >
+        select
+        *
+        from gold
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countGoldByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Gold" >
+        SELECT
+        COUNT(*)
+        from gold
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addGold"  parameterType="com.pojo.Gold"  >
+        insert into gold
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="goldRecordId != null" >
+                gold_record_id,
+            </if>
+            <if test="goldRecordTime != null" >
+                gold_record_time,
+            </if>
+            <if test="goldNum != null" >
+                gold_num,
+            </if>
+            <if test="goldUserId != null" >
+                gold_user_id,
+            </if>
+            <if test="goldReason != null" >
+                gold_reason,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="waterType != null" >
+                water_type,
+            </if>
+            <if test="retId != null" >
+                ret_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="goldRecordId != null" >
+                #{goldRecordId,jdbcType=INTEGER},
+            </if>
+            <if test="goldRecordTime != null" >
+                #{goldRecordTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="goldNum != null" >
+                #{goldNum,jdbcType=INTEGER},
+            </if>
+            <if test="goldUserId != null" >
+                #{goldUserId,jdbcType=INTEGER},
+            </if>
+            <if test="goldReason != null" >
+                #{goldReason,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="waterType != null" >
+                #{waterType,jdbcType=INTEGER},
+            </if>
+            <if test="retId != null" >
+                #{retId,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateGold" parameterType="com.pojo.Gold">
+        update gold
+        <set>
+            <if test="goldRecordTime != null">
+                gold.gold_record_time =#{goldRecordTime},
+            </if>
+            <if test="goldNum != null ">
+                gold.gold_num =#{goldNum},
+            </if>
+            <if test="goldUserId != null ">
+                gold.gold_user_id =#{goldUserId},
+            </if>
+            <if test="goldReason != null ">
+                gold.gold_reason =#{goldReason}
+            </if>
+        </set>
+        where gold.gold_record_id =#{goldRecordId}
+    </update>
+
+    <delete id="deleteGoldById" parameterType="java.lang.Integer">
+        delete from `gold`
+        where gold.gold_record_id =#{goldRecordId}
+    </delete>
+</mapper>

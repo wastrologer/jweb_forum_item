@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.AccountMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="accountId != null ">
+                AND t_user_account.account_id = #{accountId}
+            </if>
+            <if test="userId != null ">
+                AND t_user_account.user_id =#{userId}
+            </if>
+            <if test="totalGoldAccount != null ">
+                AND t_user_account.total_gold_account =#{totalGoldAccount}
+            </if>
+            <if test="totalCoinAccount != null ">
+                AND t_user_account.total_coin_account =#{totalCoinAccount}
+            </if>
+            <if test="allowWithdrawal != null ">
+                AND t_user_account.allow_withdrawal =#{allowWithdrawal}
+            </if>
+            <if test="withdrawalFreeze!= null ">
+                AND t_user_account.withdrawal_freeze =#{withdrawalFreeze}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getAccountByCondition" resultType="com.pojo.Account" parameterType="com.pojo.Account" >
+        select
+        *
+        from t_user_account
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countAccountByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Account" >
+        SELECT
+        COUNT(*)
+        from t_user_account
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addAccount"  parameterType="com.pojo.Account"  >
+        insert into `t_user_account`
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="accountId != null" >
+                account_id,
+            </if>
+            <if test="totalGoldAccount != null" >
+                total_gold_account,
+            </if>
+            <if test="totalCoinAccount != null" >
+                total_coin_account,
+            </if>
+            <if test="allowWithdrawal != null" >
+                allow_withdrawal,
+            </if>
+            <if test="withdrawalFreeze != null" >
+                withdrawal_freeze,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="accountId != null" >
+                #{accountId,jdbcType=INTEGER},
+            </if>
+            <if test="totalGoldAccount != null" >
+                #{totalGoldAccount,jdbcType=INTEGER},
+            </if>
+            <if test="totalCoinAccount != null" >
+                #{totalCoinAccount,jdbcType=INTEGER},
+            </if>
+            <if test="allowWithdrawal != null" >
+                #{allowWithdrawal,jdbcType=INTEGER},
+            </if>
+            <if test="withdrawalFreeze != null" >
+                #{withdrawalFreeze,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateAccount" parameterType="com.pojo.Account">
+        update t_user_account
+        <set>
+
+            <if test="totalGoldAccount != null ">
+                 t_user_account.total_gold_account = t_user_account.total_gold_account+#{totalGoldAccount},
+            </if>
+            <if test="totalCoinAccount != null ">
+                 t_user_account.total_coin_account =t_user_account.total_coin_account +#{totalCoinAccount},
+            </if>
+            <if test="allowWithdrawal != null ">
+                 t_user_account.allow_withdrawal =#{allowWithdrawal},
+            </if>
+            <if test="withdrawalFreeze!= null ">
+                 t_user_account.withdrawal_freeze =#{withdrawalFreeze},
+            </if>
+        </set>
+        <where>
+            <if test="accountId != null">
+                t_user_account.account_id  = #{accountId}
+            </if>
+            <if test="userId != null ">
+                AND t_user_account.user_id =#{userId}
+            </if>
+        </where>
+
+    </update>
+
+    <delete id="deleteAccountById" parameterType="java.lang.Integer">
+        delete from `t_user_account`
+        where t_user_account.account_id =#{accountId}
+    </delete>
+</mapper>

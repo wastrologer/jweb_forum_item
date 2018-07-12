@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.TopicMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="topicId != null ">
+                AND topic.topic_id = #{topicId}
+            </if>
+            <if test="topicPic != null ">
+                AND topic.topic_pic =#{topicPic}
+            </if>
+            <if test="topicName != null ">
+                AND topic.topic_name =#{topicName}
+            </if>
+            <if test="isShow != null ">
+                AND topic.is_show =#{isShow}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getTopicByCondition" resultType="com.pojo.Topic" parameterType="com.pojo.Topic" >
+        select
+        *
+        from topic
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countTopicByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Topic" >
+        SELECT
+        COUNT(*)
+        from topic
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addTopic"  parameterType="com.pojo.Topic"  >
+        insert into topic
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="topicId != null" >
+                topic_id,
+            </if>
+            <if test="topicName != null" >
+                topic_name,
+            </if>
+            <if test="topicPic != null" >
+                topic_pic,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="isShow != null" >
+                is_show,
+            </if>
+            <if test="partakeNum != null" >
+                partake_num,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="topicId != null" >
+                #{topicId,jdbcType=BIGINT},
+            </if>
+            <if test="topicName != null" >
+                #{topicName,jdbcType=VARCHAR},
+            </if>
+            <if test="topicPic != null" >
+                #{topicPic,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isShow != null" >
+                #{isShow,jdbcType=INTEGER},
+            </if>
+            <if test="partakeNum != null" >
+                #{partakeNum,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateTopic" parameterType="com.pojo.Topic">
+        update topic
+        <set>
+            <if test="topicPic != null ">
+                 topic.topic_pic =#{topicPic},
+            </if>
+            <if test="topicName != null ">
+                 topic.topic_name =#{topicName},
+            </if>
+            <if test="isShow != null ">
+                 topic.is_show =#{isShow}
+            </if>
+        </set>
+        where topic.topic_id =#{topicId}
+    </update>
+
+    <delete id="deleteTopicById" parameterType="java.lang.Integer">
+        delete from `topic`
+        where topic.topic_id =#{topicId}
+    </delete>
+</mapper>

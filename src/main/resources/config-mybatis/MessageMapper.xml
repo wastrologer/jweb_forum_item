@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.MessageMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="messageId != null ">
+                AND message.message_id = #{messageId}
+            </if>
+            <if test="messageContent != null ">
+                AND message.message_content =#{messageContent}
+            </if>
+            <if test="isRead != null ">
+                AND message.is_read =#{isRead}
+            </if>
+            <if test="messageUserId != null ">
+                AND message.message_user_id =#{messageUserId}
+            </if>
+            <if test="messageEssayId != null ">
+                AND message.message_essay_id =#{messageEssayId}
+            </if>
+            <if test="messageType != null ">
+                AND message.message_type =#{messageType}
+            </if>
+            <if test="senderUserId != null ">
+                AND message.sender_user_id =#{senderUserId}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getMessageByCondition" resultType="com.pojo.Message" parameterType="com.pojo.Message" >
+        select
+        *
+        from message
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countMessageByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Message" >
+        SELECT
+        COUNT(*)
+        from message
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addMessage"  parameterType="com.pojo.Message"  >
+        insert into message
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="messageId != null" >
+                message_id,
+            </if>
+            <if test="messageUserId != null" >
+                message_user_id,
+            </if>
+            <if test="messageContent != null" >
+                message_content,
+            </if>
+            <if test="isRead != null" >
+                is_read,
+            </if>
+            <if test="messageEssayId != null" >
+                message_essay_id,
+            </if>
+            <if test="messageType != null" >
+                message_type,
+            </if>
+            <if test="senderUserId != null" >
+                sender_user_id,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="messageId != null" >
+                #{messageId,jdbcType=BIGINT},
+            </if>
+            <if test="messageUserId != null" >
+                #{messageUserId,jdbcType=BIGINT},
+            </if>
+            <if test="messageContent != null" >
+                #{messageContent,jdbcType=VARCHAR},
+            </if>
+            <if test="isRead != null" >
+                #{isRead,jdbcType=BIT},
+            </if>
+            <if test="messageEssayId != null" >
+                #{messageEssayId,jdbcType=BIGINT},
+            </if>
+            <if test="messageType != null" >
+                #{messageType,jdbcType=INTEGER},
+            </if>
+            <if test="senderUserId != null" >
+                #{senderUserId,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+
+        </trim>
+    </insert>
+
+    <update id="updateMessage" parameterType="com.pojo.Message">
+        update message
+        <set>
+            <if test="messageContent != null">
+                message.message_content =#{messageContent},
+            </if>
+            <if test="isRead != null ">
+                message.is_read =#{isRead},
+            </if>
+            <if test="messageUserId != null ">
+                message.message_user_id =#{messageUserId},
+            </if>
+            <if test="messageEssayId != null ">
+                message.message_essay_id =#{messageEssayId},
+            </if>
+            <if test="messageType != null ">
+                message.message_type =#{messageType},
+            </if>
+            <if test="senderUserId != null ">
+               message.sender_user_id =#{senderUserId}
+            </if>
+        </set>
+        where message.message_id =#{messageId}
+    </update>
+
+    <delete id="deleteMessageById" parameterType="java.lang.Integer">
+        delete from `message`
+        where message.message_id =#{messageId}
+    </delete>
+</mapper>

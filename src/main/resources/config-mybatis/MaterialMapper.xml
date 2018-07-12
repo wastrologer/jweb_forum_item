@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.MaterialMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="materialId != null ">
+                AND material.material_id = #{materialId}
+            </if>
+            <if test="materialFormate != null ">
+                AND material.material_formate =#{materialFormate}
+            </if>
+            <if test="gatherTime != null ">
+                AND material.gather_time =#{gatherTime}
+            </if>
+            <if test="gatherDay != null ">
+                AND material.gather_day =#{gatherDay}
+            </if>
+            <if test="materialName != null ">
+                AND material.material_name =#{materialName}
+            </if>
+            <if test="isdel != null ">
+                AND material.isdel =#{isdel}
+            </if>
+            <if test="height != null ">
+                AND material.height =#{height}
+            </if>
+            <if test="width != null ">
+                AND material.width =#{width}
+            </if>
+            <if test="createTime != null ">
+                AND material.create_time =#{createTime}
+            </if>
+            <if test="lastUpdateTime != null ">
+                AND material.last_update_time =#{lastUpdateTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getMaterialByCondition" resultType="com.pojo.Material" parameterType="com.pojo.Material" >
+        select
+        *
+        from material
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countMaterialByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Material" >
+        SELECT
+        COUNT(*)
+        from material
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addMaterial"  parameterType="com.pojo.Material"  >
+        insert into material
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="materialId != null" >
+                material_id,
+            </if>
+            <if test="gatherTime != null" >
+                gather_time,
+            </if>
+            <if test="gatherDay != null" >
+                gather_day,
+            </if>
+            <if test="materialName != null" >
+                material_name,
+            </if>
+            <if test="height != null" >
+                height,
+            </if>
+            <if test="width != null" >
+                width,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="materialFormate != null" >
+                material_formate,
+            </if>
+            <if test="isdel != null" >
+                isdel,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="materialId != null" >
+                #{materialId,jdbcType=VARCHAR},
+            </if>
+            <if test="gatherTime != null" >
+                #{gatherTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gatherDay != null" >
+                #{gatherDay,jdbcType=VARCHAR},
+            </if>
+            <if test="materialName != null" >
+                #{materialName,jdbcType=VARCHAR},
+            </if>
+            <if test="height != null" >
+                #{height,jdbcType=INTEGER},
+            </if>
+            <if test="width != null" >
+                #{width,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="materialFormate != null" >
+                #{materialFormate,jdbcType=BINARY},
+            </if>
+            <if test="isdel != null" >
+                #{isdel,jdbcType=BINARY},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateMaterial" parameterType="com.pojo.Material">
+        update material
+        <set>
+            <if test="materialFormate != null ">
+                 material.material_formate =#{materialFormate},
+            </if>
+            <if test="gatherTime != null ">
+                 material.gather_time =#{gatherTime},
+            </if>
+            <if test="gatherDay != null ">
+                 material.gather_day =#{gatherDay},
+            </if>
+            <if test="materialName != null ">
+                 material.material_name =#{materialName},
+            </if>
+            <if test="isdel != null ">
+                 material.isdel =#{isdel},
+            </if>
+            <if test="height != null ">
+                 material.height =#{height},
+            </if>
+            <if test="width != null ">
+                 material.width =#{width},
+            </if>
+            <if test="createTime != null ">
+                 material.create_time =#{createTime},
+            </if>
+            <if test="lastUpdateTime != null ">
+                 material.last_update_time =#{lastUpdateTime}
+            </if>
+        </set>
+        where material.material_id =#{materialId}
+    </update>
+
+    <delete id="deleteMaterialById" parameterType="java.lang.Integer">
+        delete from `material`
+        where material.material_id =#{materialId}
+    </delete>
+</mapper>

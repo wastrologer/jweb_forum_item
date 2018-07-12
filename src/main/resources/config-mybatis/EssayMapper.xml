@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.EssayMapper">
+    <resultMap id="essayCommentsMap" type="com.pojo.Essay" autoMapping="true" >
+        <id column="essay_id" property="essayId"/>
+        <collection property="comments" ofType="com.pojo.Comment" autoMapping="true" columnPrefix="c_">
+            <id column="c_comment_id"/><!--指明ID，区分不同记录和对象，automapping。。。-->
+        </collection>
+    </resultMap>
+    <resultMap id="map" type="com.pojo.Comment" autoMapping="true" />
+    <resultMap id="essayMap" type="com.pojo.Essay" autoMapping="true" >
+        <id column="essay_id" property="essayId"/>
+    </resultMap>
+    <sql id="selectSql">
+        select
+        essay.*
+        from essay
+    </sql>
+    <sql id="selectSqlWithComments">
+        select
+        essay.*,
+        /*如果用comment.* 区分不开两者的字段*/
+        comment.comment_id as c_comment_id,
+        comment.user_id as c_user_id,
+        comment.user_nickName as c_user_nickName,
+        comment.essay_id as c_essay_id,
+        comment.comment_content as c_comment_content,
+        comment.comment_grade as c_comment_grade,
+        comment.comment_sequence as c_comment_sequence,
+        comment.senior_comment_id as c_senior_comment_id,
+        comment.publish_time as c_publish_time,
+        comment.topic_id as c_topic_id/*结尾没有，*/
+        from essay
+        LEFT JOIN comment ON essay.essay_id=comment.essay_id/*不能用c_essay_id，看来只是改变了展示的别名，而本质名字没变*/
+    </sql>
+    <sql id="whereSql">
+        1=1
+        <if test="essayId != null ">
+            AND essay.essay_id =#{essayId}
+        </if>
+        <if test="userId != null ">
+            AND essay.user_id =#{userId}
+        </if>
+        <if test="userNickname != null ">
+            AND essay.user_nickname =#{userNickname}
+        </if>
+        <if test="isPublished != null ">
+            AND essay.is_published =#{isPublished}
+        </if>
+        <if test="essayTitle != null and essayTitle !=''">
+            AND essay.essay_title like CONCAT('%',#{essayTitle},'%' )
+        </if>
+        <if test="essayContent != null and essayContent !=''">
+            AND essay.essay_content like CONCAT('%',#{essayContent},'%' )
+        </if>
+        <if test="essayPic != null and essayPic !=''">
+            AND essay.essay_pic =#{essayPic}
+        </if>
+        <if test="essayType != null ">
+            AND essay.essay_type =#{essayType}
+        </if>
+        <if test="clickNum != null ">
+            AND essay.click_num >= #{clickNum}
+        </if>
+        <if test="recommendNum != null ">
+            AND essay.recommend_num >=#{recommendNum}
+        </if>
+        <if test="commentNum != null ">
+            AND essay.comment_num >=#{commentNum}
+        </if>
+        <if test="regionId != null ">
+            AND essay.region_id =#{regionId}
+        </if>
+        <if test="topicId != null ">
+            AND essay.topic_id =#{topicId}
+        </if>
+        <if test="isHiden != null ">
+            AND essay.is_hiden =#{isHiden}
+        </if>
+    </sql>
+
+    <sql id="conditionSql">
+        1=1
+        <if test="regionIdList != null and regionIdList.size > 0">
+            AND essay.region_id IN
+            <foreach collection="regionIdList" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="userIdList != null and userIdList.size > 0">
+            AND essay.user_id IN
+            <foreach collection="userIdList" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="essayTypeList != null and essayTypeList.size > 0">
+            AND essay.essay_type IN
+            <foreach collection="essayTypeList" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="topicId != null ">
+            AND essay.topic_id =#{topicId}
+        </if>
+        <if test="essayTitle != null and essayTitle !=''">
+            AND essay.essay_title like CONCAT('%',#{essayTitle},'%' )
+        </if>
+        <if test="essayContent != null and essayContent !=''">
+            AND essay.essay_content like CONCAT('%',#{essayContent},'%' )
+        </if>
+        <if test="recommendNumFrom != null ">
+            AND essay.recommend_num >=#{recommendNumFrom}
+        </if>
+        <if test="commentNumFrom != null ">
+            AND essay.comment_num >=#{commentNumFrom}
+        </if>
+        <if test="clickNumFrom != null ">
+            AND essay.click_num >=#{clickNumFrom}
+        </if>
+        <if test="publishTimeFrom != null ">
+            AND essay.publish_time >= #{publishTimeFrom}
+        </if>
+        <if test="createTimeFrom != null ">
+            AND essay.create_time >= #{createTimeFrom}
+        </if>
+        <if test="recommendNumTo != null ">
+            AND essay.recommend_num <![CDATA[ <= ]]>#{recommendNumTo}
+        </if>
+        <if test="commentNumTo != null ">
+            AND essay.comment_num <![CDATA[ <= ]]>#{commentNumTo}
+        </if>
+        <if test="clickNumTo != null ">
+            AND essay.click_num <![CDATA[ <= ]]>#{clickNumTo}
+        </if>
+        <if test="publishTimeTo != null ">
+            AND essay.publish_time <![CDATA[ <= ]]> #{publishTimeTo}
+        </if>
+        <if test="createTimeTo != null ">
+            AND essay.create_time <![CDATA[ <= ]]> #{createTimeTo}
+        </if>
+        <if test="isPublished != null ">
+            AND essay.is_published =#{isPublished}
+        </if>
+        <if test="exceptionIdList != null and exceptionIdList.size > 0">
+            AND essay.essay_id NOT IN
+            <foreach collection="exceptionIdList" item="item" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="keywords != null and keywords.size > 0">
+            AND INSTR(essay.essay_title,
+            <foreach collection="keywords" item="item" open="" separator=") > 0  AND INSTR(essay_title," close=") > 0 ">
+                #{item}
+            </foreach>
+        </if>
+        <if test="isHiden != null ">
+            AND essay.is_hiden =#{isHiden}
+        </if>
+    </sql>
+
+    <sql id="orderSql">
+        ORDER BY
+        <if test='orderBy=="clickNum" '>
+            essay.click_num DESC ,
+        </if>
+        <if test='orderBy=="recommendNum" '>
+            essay.recommend_num DESC ,
+        </if>
+        <if test='orderBy=="commentNum" '>
+            essay.comment_num DESC ,
+        </if>
+        essay.publish_time DESC
+    </sql>
+
+    <sql id="CollectionConditionSql">
+        <if test="collectionId != null ">
+            AND collection.collection_id = #{collectionId}
+        </if>
+        <if test="collectionTime != null ">
+            AND collection.collection_time >=#{collectionTime}
+        </if>
+        <if test="userId != null ">
+            AND collection.user_id =#{userId}
+        </if>
+        <if test="essayId != null ">
+            AND collection.essay_id =#{essayId}
+        </if>
+        <if test="isPublished != null ">
+            AND essay.is_published =#{isPublished}
+        </if>
+        <if test="isHiden != null ">
+            AND essay.is_hiden =#{isHiden}
+        </if>
+    </sql>
+
+    <select id="getEssayByCollectionCondition" resultMap="essayMap" parameterType="com.pojo.Collection" >
+        <include refid="selectSql"/>
+        LEFT JOIN collection ON essay.essay_id=collection.essay_id
+        <where>
+            <include refid="CollectionConditionSql"/>
+        </where>
+        <include refid="orderSql"/>
+    </select>
+
+    <select id="getEssayComments" resultMap="essayMap"  >
+        <include refid="selectSql"/>
+        WHERE essay.essay_id=2
+    </select>
+
+    <select id="getEssayByUserList" resultMap="essayMap"  >
+        <include refid="selectSql"/>
+        <where>
+            <if test="list != null ">
+                essay.user_id IN
+                <foreach collection="list" item="item" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+        ORDER BY essay.publish_time DESC
+    </select>
+
+    <select id="getEssayByCondition" resultMap="essayMap" parameterType="com.pojo.EssayParam" >
+        <include refid="selectSql"/>
+        <where>
+            <include refid="conditionSql"/>
+        </where>
+        <include refid="orderSql"/>
+    </select>
+
+    <select id="getEssayByFuzzyCondition" resultMap="essayMap" parameterType="com.pojo.Essay" >
+        <include refid="selectSql"/>
+        <where>
+            <include refid="whereSql"/>
+            <if test="publishTime != null and publishTime !=''">
+                AND DATE (essay.publish_time) = DATE (#{publishTime})
+            </if>
+        </where>
+        ORDER BY essay.publish_time DESC
+
+    </select>
+
+    <select id="getEssayOrderByTime" resultMap="essayMap" parameterType="com.pojo.Essay" >
+        <include refid="selectSql"/>
+        <where>
+            <include refid="whereSql"/>
+            <if test="publishTime != null and publishTime !=''">
+                AND essay.publish_time >#{publishTime}
+            </if>
+        </where>
+            ORDER BY essay.publish_time DESC
+    </select>
+    <select id="getEssayOrderByClick" resultMap="essayMap" parameterType="com.pojo.Essay" >
+        <include refid="selectSql"/>
+        <where>
+            <include refid="whereSql"/>
+            <if test="publishTime != null and publishTime !=''">
+                AND essay.publish_time >#{publishTime}
+            </if>
+        </where>
+        ORDER BY essay.click_num DESC
+    </select>
+    <select id="getEssayByAccurateCondition" resultMap="essayCommentsMap" parameterType="com.pojo.Essay" >
+        <include refid="selectSql"/>
+        <where>
+            1=1
+            <if test="essayId != null ">
+                AND essay.essay_id =#{essayId}
+            </if>
+            <if test="isPublished != null ">
+                AND essay.is_published =#{isPublished}
+            </if>
+            <if test="userId != null ">
+                AND essay.user_id =#{userId}
+            </if>
+            <if test="userNickname != null ">
+                AND essay.user_nickname =#{userNickname}
+            </if>
+            <if test="essayTitle != null and essayTitle !=''">
+                AND essay.essay_title = #{essayTitle}
+            </if>
+            <if test="essayContent != null and essayContent !=''">
+                AND essay.essay_content =#{essayContent}
+            </if>
+            <if test="essayPic != null and essayPic !=''">
+                AND essay.essay_pic =#{essayPic}
+            </if>
+            <if test="essayType != null ">
+                AND essay.essay_type =#{essayType}
+            </if>
+            <if test="publishTime != null ">
+                AND DATE (essay.publish_time) = DATE (#{publishTime})
+            </if>
+            <if test="createTime != null ">
+                AND DATE (essay.create_time) = DATE (#{createTime})
+            </if>
+            <if test="clickNum != null ">
+                AND essay.click_num >= #{clickNum}
+            </if>
+            <if test="recommendNum != null ">
+                AND essay.recommend_num >=#{recommendNum}
+            </if>
+            <if test="commentNum != null ">
+                AND essay.comment_num >=#{commentNum}
+            </if>
+            <if test="regionId != null ">
+                AND essay.region_id =#{regionId}
+            </if>
+            <if test="topicId != null ">
+                AND essay.topic_id =#{topicId}
+            </if>
+            <if test="isHiden != null ">
+                AND essay.is_hiden =#{isHiden}
+            </if>
+        </where>
+    </select>
+
+    <select id="countEssayByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Essay" >
+        select
+        COUNT(essay.essay_title) /*intellij自动在后面加空格，但实际是不要空格的：（*/
+        as num
+        from essay
+        <where>
+            <include refid="whereSql"/>
+            <if test="publishTime != null ">
+                AND DATE (essay.publish_time) = DATE (#{publishTime})
+            </if>
+        </where>
+    </select>
+
+    <insert id="addEssay"  parameterType="com.pojo.Essay"  >
+        insert into essay
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="essayId != null" >
+                essay_id,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="essayTitle != null" >
+                essay_title,
+            </if>
+            <if test="essayPic != null" >
+                essay_pic,
+            </if>
+            <if test="essayType != null" >
+                essay_type,
+            </if>
+            <if test="publishTime != null" >
+                publish_time,
+            </if>
+            <if test="clickNum != null" >
+                click_num,
+            </if>
+            <if test="topicId != null" >
+                topic_id,
+            </if>
+            <if test="recommendNum != null" >
+                recommend_num,
+            </if>
+            <if test="commentNum != null" >
+                comment_num,
+            </if>
+            <if test="regionId != null" >
+                region_id,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="isPublished != null" >
+                is_published,
+            </if>
+            <if test="userNickname != null" >
+                user_nickname,
+            </if>
+            <if test="goldNum != null" >
+                gold_num,
+            </if>
+            <if test="isAward != null" >
+                is_award,
+            </if>
+            <if test="isHiden != null" >
+                is_hiden,
+            </if>
+            <if test="essayContent != null" >
+                essay_content,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="essayId != null" >
+                #{essayId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="essayTitle != null" >
+                #{essayTitle,jdbcType=VARCHAR},
+            </if>
+            <if test="essayPic != null" >
+                #{essayPic,jdbcType=VARCHAR},
+            </if>
+            <if test="essayType != null" >
+                #{essayType,jdbcType=TINYINT},
+            </if>
+            <if test="publishTime != null" >
+                #{publishTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="clickNum != null" >
+                #{clickNum,jdbcType=INTEGER},
+            </if>
+            <if test="topicId != null" >
+                #{topicId,jdbcType=SMALLINT},
+            </if>
+            <if test="recommendNum != null" >
+                #{recommendNum,jdbcType=INTEGER},
+            </if>
+            <if test="commentNum != null" >
+                #{commentNum,jdbcType=INTEGER},
+            </if>
+            <if test="regionId != null" >
+                #{regionId,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isPublished != null" >
+                #{isPublished,jdbcType=INTEGER},
+            </if>
+            <if test="userNickname != null" >
+                #{userNickname,jdbcType=VARCHAR},
+            </if>
+            <if test="goldNum != null" >
+                #{goldNum,jdbcType=INTEGER},
+            </if>
+            <if test="isAward != null" >
+                #{isAward,jdbcType=INTEGER},
+            </if>
+            <if test="isHiden != null" >
+                #{isHiden,jdbcType=INTEGER},
+            </if>
+            <if test="essayContent != null" >
+                #{essayContent,jdbcType=LONGVARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateEssay" parameterType="com.pojo.Essay">
+        update essay
+        <set>
+            <if test="userId != null">
+                essay.user_id =#{userId},
+            </if>
+            <if test="userNickname != null">
+                essay.user_nickname =#{userNickname},
+            </if>
+            <if test="isPublished != null ">
+                essay.is_published =#{isPublished},
+            </if>
+            <if test="essayTitle != null and essayTitle !=''">
+                essay.essay_title = #{essayTitle},
+            </if>
+            <if test="essayContent != null and essayContent !=''">
+                essay.essay_content =#{essayContent},
+            </if>
+            <if test="essayPic != null and essayPic !=''">
+                essay.essay_pic =#{essayPic},
+            </if>
+            <if test="essayType != null ">
+                essay.essay_type =#{essayType},
+            </if>
+            <if test="publishTime != null ">
+                essay.publish_time = #{publishTime},
+            </if>
+            <if test="commentNum != null ">
+                essay.comment_num =essay.comment_num+ #{commentNum},
+            </if>
+            <if test="recommendNum != null ">
+                essay.recommend_num = essay.recommend_num +#{recommendNum},
+            </if>
+            <if test="clickNum != null ">
+                essay.click_num =essay.click_num + #{clickNum},
+            </if>
+            <if test="regionId != null ">
+                essay.region_id = #{regionId},
+            </if>
+            <if test="topicId != null ">
+                essay.topic_id =#{topicId}
+            </if>
+            <if test="isHiden != null ">
+                essay.is_hiden =#{isHiden}
+            </if>
+        </set>
+        where essay.essay_id =#{essayId}
+    </update>
+
+    <delete id="deleteEssayById" parameterType="java.lang.Integer">
+        delete from `essay`
+        where essay.essay_id =#{essayId}
+    </delete>
+
+    <update id="updateEssayBatch"  parameterType="com.pojo.User">
+        update essay
+        <set>
+            <if test="nickname != null">
+                essay.user_nickname =#{nickname},
+            </if>
+        </set>
+        where essay.user_id =#{userId}
+    </update>
+</mapper>

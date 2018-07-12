@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.AccusationMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="accusationId != null ">
+                AND accusation.accusation_id = #{accusationId}
+            </if>
+            <if test="userId != null ">
+                AND accusation.user_id =#{userId}
+            </if>
+            <if test="essayId != null ">
+                AND accusation.essay_id =#{essayId}
+            </if>
+            <if test="createTime != null ">
+                AND accusation.create_time =#{createTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getAccusationByCondition" resultType="com.pojo.Accusation" parameterType="com.pojo.Accusation" >
+        select
+        *
+        from accusation
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countAccusationByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Accusation" >
+        SELECT
+        COUNT(*)
+        from accusation
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addAccusation"  parameterType="com.pojo.Accusation"  >
+        insert into accusation
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="accusationId != null" >
+                accusation_id,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="essayId != null" >
+                essay_id,
+            </if>
+            <if test="accusationContent != null" >
+                accusation_content,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+
+            <if test="auditState != null" >
+                audit_state,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="accusationId != null" >
+                #{accusationId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="essayId != null" >
+                #{essayId,jdbcType=BIGINT},
+            </if>
+            <if test="accusationContent != null" >
+                #{accusationContent,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="auditState != null" >
+                #{auditState,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateAccusation" parameterType="com.pojo.Accusation">
+        update accusation
+        <set>
+            <if test="userId != null ">
+                 accusation.user_id =#{userId},
+            </if>
+            <if test="essayId != null ">
+                 accusation.essay_id =#{essayId},
+            </if>
+            <if test="createTime != null ">
+                 accusation.create_time =#{createTime},
+            </if>
+            <if test="accusationContent != null ">
+                accusation.accusation_content =#{accusationContent},
+            </if>
+        </set>
+        where accusation.accusation_id =#{accusationId}
+    </update>
+
+    <delete id="deleteAccusationByCondition" parameterType="com.pojo.Accusation">
+        delete from `accusation`
+        <include refid="whereSql"/>
+    </delete>
+</mapper>

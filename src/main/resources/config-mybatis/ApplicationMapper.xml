@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.ApplicationMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="applicationId != null ">
+                AND application.application_id = #{applicationId}
+            </if>
+            <if test="applicationTime != null ">
+                AND application.application_time =#{applicationTime}
+            </if>
+            <if test="userId != null ">
+                AND application.user_id =#{userId}
+            </if>
+            <if test="auditorId != null ">
+                AND application.auditor_id =#{auditorId}
+            </if>
+            <if test="auditTime != null ">
+                AND application.audit_time =#{auditTime}
+            </if>
+            <if test="alipayAccount != null ">
+                AND application.alipay_account =#{alipayAccount}
+            </if>
+            <if test="alipayName!= null ">
+                AND application.alipay_name =#{alipayName}
+            </if>
+            <if test="goldNum != null ">
+                AND application.gold_num =#{goldNum}
+            </if>
+            <if test="applyState != null ">
+                AND application.apply_state =#{applyState}
+            </if>
+            <if test="createTime != null ">
+                AND application.create_time =#{createTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getApplicationByCondition" resultType="com.pojo.Application" parameterType="com.pojo.Application" >
+        select
+        *
+        from application
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countApplicationByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Application" >
+        SELECT
+        COUNT(*)
+        from application
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addApplication"  parameterType="com.pojo.Application"  >
+        insert into application
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="applicationId != null" >
+                application_id,
+            </if>
+            <if test="applicationTime != null" >
+                application_time,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="auditorId != null" >
+                auditor_id,
+            </if>
+            <if test="auditTime != null" >
+                audit_time,
+            </if>
+            <if test="alipayAccount != null" >
+                alipay_account,
+            </if>
+            <if test="alipayName != null" >
+                alipay_name,
+            </if>
+            <if test="goldNum != null" >
+                gold_num,
+            </if>
+            <if test="applyState != null" >
+                apply_state,
+            </if>
+            <if test="refuseReason != null" >
+                refuse_reason,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="applicationId != null" >
+                #{applicationId,jdbcType=INTEGER},
+            </if>
+            <if test="applicationTime != null" >
+                #{applicationTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="auditorId != null" >
+                #{auditorId,jdbcType=INTEGER},
+            </if>
+            <if test="auditTime != null" >
+                #{auditTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="alipayAccount != null" >
+                #{alipayAccount,jdbcType=VARCHAR},
+            </if>
+            <if test="alipayName != null" >
+                #{alipayName,jdbcType=VARCHAR},
+            </if>
+            <if test="goldNum != null" >
+                #{goldNum,jdbcType=INTEGER},
+            </if>
+            <if test="applyState != null" >
+                #{applyState,jdbcType=INTEGER},
+            </if>
+            <if test="refuseReason != null" >
+                #{refuseReason,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateApplication" parameterType="com.pojo.Application">
+        update application
+        <set>
+            <if test="applicationTime != null ">
+                application.application_time =#{applicationTime},
+            </if>
+            <if test="userId != null ">
+                application.user_id =#{userId},
+            </if>
+            <if test="auditorId != null ">
+               application.auditor_id =#{auditorId},
+            </if>
+            <if test="auditTime != null ">
+               application.audit_time =#{auditTime},
+            </if>
+            <if test="alipayAccount != null ">
+                application.alipay_account =#{alipayAccount},
+            </if>
+            <if test="alipayName!= null ">
+               application.alipay_name =#{alipayName},
+            </if>
+            <if test="goldNum != null ">
+                application.gold_num =#{goldNum},
+            </if>
+            <if test="applyState != null ">
+               application.apply_state =#{applyState},
+            </if>
+            <if test="refuseReason != null ">
+                application.refuse_reason =#{refuseReason},
+            </if>
+        </set>
+        where application.application_id =#{applicationId}
+    </update>
+
+    <delete id="deleteApplicationById" parameterType="java.lang.Integer">
+        delete from `application`
+        where application.application_id =#{applicationId}
+    </delete>
+</mapper>

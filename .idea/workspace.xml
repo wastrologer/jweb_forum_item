@@ -1,0 +1,1678 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="forum:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="25fe26bd-5b69-4017-aadf-efff3ca804d0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common/activeMq" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common/cache" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common/security" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/constant" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/controller" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/dao" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pojo" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/service" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/tools" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/activeMq" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/activeMq/MsgCommandId.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/activeMq/MsgCommandId.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/activeMq/MsgConsumer.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/activeMq/MsgConsumer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/activeMq/MsgProducer.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/activeMq/MsgProducer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/activeMq/RealizeConsumer.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/activeMq/RealizeConsumer.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/activeMq/ReturnMessage.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/activeMq/ReturnMessage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/cache/CacheClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/cache/CacheClient.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/cache/CacheKeyConstant.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/cache/CacheKeyConstant.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/cache/CacheKeyProvider.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/cache/CacheKeyProvider.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/cache/CacheKeyUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/cache/CacheKeyUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/cache/CacheObj.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/cache/CacheObj.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/BaseDo.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/BaseDo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/CommonEnum.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/CommonEnum.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/Constants.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/Constants.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/Material.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/Material.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/ReturnValueConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/ReturnValueConstants.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/SMSCountVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/SMSCountVo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/SMSVo.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/SMSVo.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/SentenceConstants.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/entity/SentenceConstants.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/security" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/security/MyAuthenticationSuccessHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/security/MyAuthenticationSuccessHandler.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/security/MyUserDetailService.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/security/MyUserDetailService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/security/TokenAuthenticationFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/security/TokenAuthenticationFilter.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/Base64Util.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/Base64Util.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/CommandUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/CommandUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/DateUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/DateUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/EnvManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/EnvManager.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/FileUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/FileUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/HelperUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/HelperUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/ImageIvalidationUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/ImageIvalidationUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/ImageUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/ImageUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/ImageValidationUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/ImageValidationUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/MD5Util.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/MD5Util.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/SendSMS.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/SendSMS.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/SortListUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/SortListUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/StringUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/StringUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/SvcUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/SvcUtils.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/TokenUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/TokenUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/UserInfoUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/utils/UserInfoUtil.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/constant" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/constant/ErrorCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/constant/ErrorCode.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/BaseController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/CollectionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/CollectionController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/CommentController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/CommentController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/EssayController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/EssayController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/LoginController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/RegisterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/RegisterController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/UploadController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UploadController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/UserController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/IUserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/IUserDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/AuthMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/AuthMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/CoinMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/CoinMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/CollectionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/CollectionMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/CommentMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/CommentMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/ConcernMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/ConcernMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/EssayMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/EssayMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/GoldMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/GoldMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/MaterialMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/MaterialMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/MessageMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/MessageMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/RecommendMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/RecommendMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/RegionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/RegionMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/UserMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/mapper/UserMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Auth.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Auth.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Coin.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Coin.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Collection.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Collection.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Comment.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Concern.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Concern.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Essay.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Essay.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/EssayParam.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/EssayParam.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Gold.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Gold.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/ImageCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/ImageCode.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/ImageCodeCount.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/ImageCodeCount.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/ImageValidateCode.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/ImageValidateCode.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Message.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Message.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Recommend.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Recommend.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Region.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Region.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Topic.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/Topic.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/UserToken.java" afterPath="$PROJECT_DIR$/src/main/java/com/pojo/UserToken.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/ICollectionSvc.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/ICollectionSvc.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/ICommentSvc.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/ICommentSvc.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/IEssaySvc.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/IEssaySvc.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/IMaterialSvc.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/IMaterialSvc.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/IUserSvc.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/IUserSvc.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/CollectionSvcImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/CollectionSvcImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/CommentSvcImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/CommentSvcImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/EssaySvcImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/EssaySvcImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/MaterialSvcImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/MaterialSvcImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/UserSvcImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/impl/UserSvcImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kaisheng/tools" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/AuthMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/AuthMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/CoinMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/CoinMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/CollectionMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/CollectionMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/CommentMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/CommentMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/ConcernMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/ConcernMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/EssayMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/EssayMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/GoldMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/GoldMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/MessageMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/MessageMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/RecommendMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/RecommendMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/RegionMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/RegionMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-mybatis/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-mybatis/UserMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-spring/spring-activemq.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-spring/spring-activemq.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-spring/spring-mvc.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-spring/spring-mybatis.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-spring/spring-mybatis.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-spring/spring-security.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-spring/spring-security.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config-spring/spring-service.xml" afterPath="$PROJECT_DIR$/src/main/resources/config-spring/spring-service.xml" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="cfg_local.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/cfg_local.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1566">
+              <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GoldMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/GoldMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1528426712876" expanded="true" signature="967:1001" ph="select * fro... gold" />
+                <marker date="1528426712876" expanded="true" signature="1162:1203" ph="SELECT COUNT... gold" />
+                <marker date="1528426712876" expanded="true" signature="1322:1497" ph="insert into `gold`... " />
+                <marker date="1528426712876" expanded="true" signature="1580:2118" ph="update gold... " />
+                <marker date="1528426712876" expanded="true" signature="2209:2278" ph="delete from `gold`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="682">
+              <caret line="169" column="16" lean-forward="true" selection-start-line="169" selection-start-column="16" selection-end-line="169" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mybatis-config.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-activemq.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-activemq.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-mvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="870">
+              <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-mybatis.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-mybatis.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-security.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-security.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-service.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-service.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Jsp File" />
+        <option value="HTML File" />
+        <option value="Tag Library Descriptor" />
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>message_num</find>
+      <find>UserId</find>
+      <find>essayId</find>
+      <find>SvcUtils</find>
+      <find>getMessageByCondition</find>
+      <find>SvcUtils.</find>
+      <find>getErrorMap(e)</find>
+      <find>getUserId</find>
+      <find>coin</find>
+      <find>collectionNum</find>
+      <find>CollectionNum</find>
+      <find>Comment</find>
+      <find>comment</find>
+      <find>if\(user\!\=null\)\{\n                Integer id\=user\.getUserId\(\)\;\n                List\&lt;Message\&gt; list\= svcUtils\.getMessageByUserId\(id\)\;\n                svcUtils\.cacheMsgByUserAndType\(user\,list\,cacheClient\)\;\n            \}</find>
+      <find>setPublishTime</find>
+      <find>IUserSvc</find>
+      <find>ICommentSvc</find>
+      <find>errCode</find>
+      <find>private</find>
+      <find>conceal</find>
+      <find>getUserByUserName</find>
+      <find>.to_id</find>
+      <find>e\.setPublishTime\(new Timestamp\(System\.currentTimeMillis\(\)\)\)\;\n</find>
+      <find>(System.currentTimeMillis()</find>
+      <find>Date</find>
+      <find>ystem.currentTimeMillis()</find>
+      <find>if\(result\.size\(\)\=\=1\)\{\n            return result\.get\(0\)\;\n        \}else if\(result\.size\(\)\=\=0\)\{\n            return null\;\n        \}else\{\n            throw new RuntimeException\(\&quot;查询到的对象数量为\：\&quot;\+result\.size\(\)\+\&quot;\.不合逻辑\&quot;\)\;\n        \}</find>
+      <find>throw new RuntimeException\(\&quot;查询到的对象数量为\：\&quot;\+result\.size\(\)\+\&quot;\.不合逻辑\&quot;\)\;\n</find>
+      <find>getAndTouch</find>
+      <find>xmem</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>comment</replace>
+      <replace>recommend</replace>
+      <replace>concern</replace>
+      <replace>Region</replace>
+      <replace>principal</replace>
+      <replace>region</replace>
+      <replace>User</replace>
+      <replace>Coin</replace>
+      <replace>Gold</replace>
+      <replace>gold</replace>
+      <replace>Integer</replace>
+      <replace>coin</replace>
+      <replace>message</replace>
+      <replace>messageId</replace>
+      <replace>type</replace>
+      <replace>Message</replace>
+      <replace>is_read</replace>
+      <replace>MessageUserId</replace>
+      <replace>messageEssayId</replace>
+      <replace>svcUtils</replace>
+      <replace>svcUtils.</replace>
+      <replace>getErrorMap(e.getClass().getName())</replace>
+      <replace>essayId</replace>
+      <replace>EssayId</replace>
+      <replace>Collection</replace>
+      <replace>collection</replace>
+      <replace>setCollectionTime</replace>
+      <replace>errorCode</replace>
+      <replace>.user_to_id</replace>
+      <replace>Timestamp</replace>
+    </replaceStrings>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/ReturnValueConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/CoinMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/GoldMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/StringUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/GoldMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/CoinMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/RegionMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/SentenceConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Coin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/SortListUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/MessageMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/MessageMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/CollectionMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/CollectionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/ICollectionSvc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/EssayMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/ICommentSvc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/dao/mapper/CommentMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/CommentMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Gold.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/CollectionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/SendSMS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/constant/ErrorCode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/RegisterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/IUserSvc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/UserInfoUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/security/MyUserDetailService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/ConcernMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Collection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Essay.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/Comment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/CollectionSvcImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/UserSvcImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/entity/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/cache/CacheClient.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/common/utils/SvcUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/IEssaySvc.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/EssayController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/EssayMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/EssayParam.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/pojo/User.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-mybatis/UserMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/CommentSvcImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/kaisheng/service/impl/EssaySvcImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/impl/EssaySvcImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-spring/spring-mybatis.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config-spring/spring-service.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/tool/maven/apache-maven-3.3.9-bin" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SerializableHasSerialVersionUIDField</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="nodejs.jest.jest_package" value="" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\pro\forum\src\main\webapp\WEB-INF\views" />
+      <recent name="D:\pro\forum\src\main\webapp\WEB-INF" />
+      <recent name="D:\pro\forum\src\main\webapp" />
+      <recent name="D:\pro\forum\src\main\webapp\views" />
+      <recent name="D:\pro\forum\src\main\webapp\html" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pro\forum\src\main\resources\config-mybatis" />
+      <recent name="D:\pro\forum\src\main\java\com\kaisheng\common\utils" />
+      <recent name="D:\pro\forum\src\main\java\com\kaisheng\common\entity" />
+      <recent name="D:\pro\forum\src\main\webapp" />
+      <recent name="D:\pro\forum\src\main\resources\config-spring" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kaisheng.service.impl" />
+      <recent name="com.kaisheng.service" />
+      <recent name="com.kaisheng.controller" />
+      <recent name="com.kaisheng.dao.mapper" />
+      <recent name="com.kaisheng.pojo" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.kaisheng.pojo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.tomcat7">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration name="BaseController" type="Application" factoryName="Application" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.kaisheng.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.kaisheng.controller.BaseController" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="forum" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="forum" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="tomcat7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.64" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" show_console_on_std_out="true" show_console_on_std_err="true">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="forum:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_forum" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="true" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="true" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="61351" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="forum:war exploded" />
+        </option>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.BaseController" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.tomcat7" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Mr\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\pro\forum" />
+          <option name="myCopyRoot" value="D:\pro\forum" />
+        </SvnCopyRootSimple>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\pro\forum" />
+          <option name="myCopyRoot" value="D:\pro\forum\src" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\pro\forum" />
+          <option name="myCopyRoot" value="D:\pro\forum" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25fe26bd-5b69-4017-aadf-efff3ca804d0" name="Default" comment="" />
+      <created>1525336556292</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1525336556292</updated>
+      <workItem from="1525336560318" duration="28573000" />
+      <workItem from="1525426431197" duration="86040000" />
+      <workItem from="1525955126677" duration="202565000" />
+      <workItem from="1526894458054" duration="317846000" />
+      <workItem from="1528180310317" duration="73520000" />
+      <workItem from="1528427418618" duration="74000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1528180814152</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528180814152</updated>
+    </task>
+    <task id="LOCAL-00002">
+      <created>1528181188039</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528181188039</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="708618000" />
+  </component>
+  <component name="TodoView" selected-index="2">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5063966" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.641258" order="2" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.4978678" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26279318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.4936034" order="3" side_tool="false" content_ui="tabs" x="0" y="23" width="1920" height="1017" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32934782" sideWeight="0.48933902" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_UNVERSIONED_FILES_WHILE_COMMIT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.7.RELEASE/spring-security-core-3.2.7.RELEASE-sources.jar!/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.7.RELEASE/spring-security-core-3.2.7.RELEASE-sources.jar!/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.java</url>
+          <line>88</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.7.RELEASE/spring-security-core-3.2.7.RELEASE-sources.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.java</url>
+          <line>148</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.7.RELEASE/spring-security-core-3.2.7.RELEASE-sources.jar!/org/springframework/security/crypto/bcrypt/BCryptPasswordEncoder.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.7.RELEASE/spring-security-core-3.2.7.RELEASE-sources.jar!/org/springframework/security/crypto/password/NoOpPasswordEncoder.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.7.RELEASE/spring-security-core-3.2.7.RELEASE-sources.jar!/org/springframework/security/authentication/encoding/MessageDigestPasswordEncoder.java</url>
+          <line>123</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/common/security/TokenAuthenticationFilter.java</url>
+          <line>199</line>
+          <properties />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/common/security/MyAuthenticationSuccessHandler.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/common/security/MyAuthenticationSuccessHandler.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java</url>
+          <line>147</line>
+          <properties />
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/controller/CommentController.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/controller/CommentController.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/service/impl/CommentSvcImpl.java</url>
+          <line>124</line>
+          <properties />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="108" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/utils/SendSMS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1247">
+          <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/constant/ErrorCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/Gold.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="54" column="94" lean-forward="false" selection-start-line="54" selection-start-column="94" selection-end-line="54" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/entity/SentenceConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="19" column="75" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/utils/HelperUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-319">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="483" column="27" lean-forward="false" selection-start-line="483" selection-start-column="16" selection-end-line="483" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/IUserSvc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="45" column="16" lean-forward="false" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/utils/TokenUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/security/MyUserDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="35" column="94" lean-forward="false" selection-start-line="35" selection-start-column="94" selection-end-line="35" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/Concern.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/ConcernMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+          <folding>
+            <marker date="1528426712794" expanded="true" signature="741:778" ph="select * fro... concern" />
+            <marker date="1528426712794" expanded="true" signature="945:989" ph="SELECT COUNT... concern" />
+            <marker date="1528426712794" expanded="true" signature="1114:1227" ph="insert into `concern`... " />
+            <marker date="1528426712794" expanded="true" signature="1316:1629" ph="update concern... " />
+            <marker date="1528426712794" expanded="true" signature="1723:1791" ph="delete from `concern`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/utils/UserInfoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2349">
+          <caret line="93" column="20" lean-forward="false" selection-start-line="93" selection-start-column="20" selection-end-line="93" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.7/mybatis-3.2.7-sources.jar!/org/apache/ibatis/binding/MapperProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.32/mysql-connector-java-5.1.32.jar!/com/mysql/jdbc/SQLError.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="423" column="50" lean-forward="true" selection-start-line="423" selection-start-column="50" selection-end-line="423" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mybatis/mybatis/3.2.7/mybatis-3.2.7-sources.jar!/org/apache/ibatis/binding/MapperMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2668">
+          <caret line="118" column="66" lean-forward="true" selection-start-line="118" selection-start-column="66" selection-end-line="118" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/CollectionSvcImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="96" column="48" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/UserSvcImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="280" column="48" lean-forward="false" selection-start-line="280" selection-start-column="48" selection-end-line="280" selection-end-column="48" />
+          <folding>
+            <element signature="e#5057#5058#0" expanded="false" />
+            <element signature="e#5121#5122#0" expanded="false" />
+            <element signature="e#6224#6225#0" expanded="false" />
+            <element signature="e#6274#6275#0" expanded="false" />
+            <element signature="e#6340#6341#0" expanded="false" />
+            <element signature="e#6400#6401#0" expanded="false" />
+            <element signature="e#6464#6465#0" expanded="false" />
+            <element signature="e#6522#6523#0" expanded="false" />
+            <element signature="e#6588#6589#0" expanded="false" />
+            <element signature="e#6648#6649#0" expanded="false" />
+            <element signature="e#7504#7505#0" expanded="false" />
+            <element signature="e#7531#7532#0" expanded="false" />
+            <element signature="e#7602#7603#0" expanded="false" />
+            <element signature="e#7669#7670#0" expanded="false" />
+            <element signature="e#12482#12483#0" expanded="false" />
+            <element signature="e#12534#12535#0" expanded="false" />
+            <element signature="e#12585#12586#0" expanded="false" />
+            <element signature="e#12633#12634#0" expanded="false" />
+            <element signature="e#12704#12705#0" expanded="false" />
+            <element signature="e#12765#12766#0" expanded="false" />
+            <element signature="e#12834#12835#0" expanded="false" />
+            <element signature="e#12893#12894#0" expanded="false" />
+            <element signature="e#12962#12963#0" expanded="false" />
+            <element signature="e#13021#13022#0" expanded="false" />
+            <element signature="e#13097#13098#0" expanded="false" />
+            <element signature="e#13162#13163#0" expanded="false" />
+            <element signature="e#13234#13235#0" expanded="false" />
+            <element signature="e#13295#13296#0" expanded="false" />
+            <element signature="e#14177#14178#0" expanded="false" />
+            <element signature="e#14205#14206#0" expanded="false" />
+            <element signature="e#14272#14273#0" expanded="false" />
+            <element signature="e#14300#14301#0" expanded="false" />
+            <element signature="e#16068#16069#0" expanded="false" />
+            <element signature="e#16102#16103#0" expanded="false" />
+            <element signature="e#16161#16162#0" expanded="false" />
+            <element signature="e#16207#16208#0" expanded="false" />
+            <element signature="e#16251#16252#0" expanded="false" />
+            <element signature="e#16290#16291#0" expanded="false" />
+            <element signature="e#16355#16356#0" expanded="false" />
+            <element signature="e#16411#16412#0" expanded="false" />
+            <element signature="e#16455#16456#0" expanded="false" />
+            <element signature="e#16494#16495#0" expanded="false" />
+            <element signature="e#16559#16560#0" expanded="false" />
+            <element signature="e#16615#16616#0" expanded="false" />
+            <element signature="e#16656#16657#0" expanded="false" />
+            <element signature="e#16689#16690#0" expanded="false" />
+            <element signature="e#16745#16746#0" expanded="false" />
+            <element signature="e#16789#16790#0" expanded="false" />
+            <element signature="e#16830#16831#0" expanded="false" />
+            <element signature="e#16863#16864#0" expanded="false" />
+            <element signature="e#16919#16920#0" expanded="false" />
+            <element signature="e#16963#16964#0" expanded="false" />
+            <element signature="e#17006#17007#0" expanded="false" />
+            <element signature="e#17044#17045#0" expanded="false" />
+            <element signature="e#17107#17108#0" expanded="false" />
+            <element signature="e#17161#17162#0" expanded="false" />
+            <element signature="e#17201#17202#0" expanded="false" />
+            <element signature="e#17230#17231#0" expanded="false" />
+            <element signature="e#17271#17272#0" expanded="false" />
+            <element signature="e#17304#17305#0" expanded="false" />
+            <element signature="e#17360#17361#0" expanded="false" />
+            <element signature="e#17404#17405#0" expanded="false" />
+            <element signature="e#17445#17446#0" expanded="false" />
+            <element signature="e#17478#17479#0" expanded="false" />
+            <element signature="e#17534#17535#0" expanded="false" />
+            <element signature="e#17578#17579#0" expanded="false" />
+            <element signature="e#17620#17621#0" expanded="false" />
+            <element signature="e#17655#17656#0" expanded="false" />
+            <element signature="e#17714#17715#0" expanded="false" />
+            <element signature="e#17762#17763#0" expanded="false" />
+            <element signature="e#17808#17809#0" expanded="false" />
+            <element signature="e#17845#17846#0" expanded="false" />
+            <element signature="e#17910#17911#0" expanded="false" />
+            <element signature="e#17962#17963#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/entity/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/googlecode/xmemcached/xmemcached/2.0.0/xmemcached-2.0.0-sources.jar!/net/rubyeye/xmemcached/MemcachedClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32364">
+          <caret line="1130" column="17" lean-forward="false" selection-start-line="1130" selection-start-column="17" selection-end-line="1130" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/cache/CacheClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="131" column="43" lean-forward="false" selection-start-line="131" selection-start-column="32" selection-end-line="131" selection-end-column="43" />
+          <folding>
+            <element signature="e#898#899#0" expanded="false" />
+            <element signature="e#954#955#0" expanded="false" />
+            <element signature="e#1800#1801#0" expanded="false" />
+            <element signature="e#1838#1839#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="252" column="34" lean-forward="false" selection-start-line="252" selection-start-column="30" selection-end-line="252" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="153" column="46" lean-forward="true" selection-start-line="153" selection-start-column="46" selection-end-line="153" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.6.RELEASE/spring-web-4.0.6.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="214" column="0" lean-forward="false" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/CollectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/EssayParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="55" column="22" lean-forward="false" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="22" />
+          <folding>
+            <element signature="e#808#809#0" expanded="false" />
+            <element signature="e#836#837#0" expanded="false" />
+            <element signature="e#875#876#0" expanded="false" />
+            <element signature="e#902#903#0" expanded="false" />
+            <element signature="e#941#942#0" expanded="false" />
+            <element signature="e#978#979#0" expanded="false" />
+            <element signature="e#1036#1037#0" expanded="false" />
+            <element signature="e#1088#1089#0" expanded="false" />
+            <element signature="e#1125#1126#0" expanded="false" />
+            <element signature="e#1160#1161#0" expanded="false" />
+            <element signature="e#1214#1215#0" expanded="false" />
+            <element signature="e#1262#1263#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/Essay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/EssayMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="199" column="102" lean-forward="true" selection-start-line="199" selection-start-column="102" selection-end-line="199" selection-end-column="102" />
+          <folding>
+            <marker date="1528426711647" expanded="true" signature="650:1274" ph="select essay... essay" />
+            <marker date="1528426711647" expanded="true" signature="650:1313" ph="select essay... essay" />
+            <marker date="1528426711647" expanded="true" signature="682:708" ph="/*如果用comment... " />
+            <marker date="1528426711647" expanded="true" signature="1274:1312" ph="/*不能用c_essay... " />
+            <marker date="1528426711647" expanded="true" signature="6954:6983" ph="select * fro... user" />
+            <marker date="1528426711647" expanded="true" signature="6954:6984" ph="select essay... essay" />
+            <marker date="1528426711647" expanded="true" signature="6954:6985" ph="select essay... essay" />
+            <marker date="1528426711647" expanded="true" signature="8064:8105" ph="/* ORDER BY " />
+            <marker date="1528426711647" expanded="true" signature="8256:8488" ph="select essay... essay" />
+            <marker date="1528426711647" expanded="true" signature="8256:8489" ph="select essay... essay" />
+            <marker date="1528426711647" expanded="true" signature="8256:8512" ph="select essay... essay" />
+            <marker date="1528426711647" expanded="true" signature="11076:11108" ph="/*intellij自动... " />
+            <marker date="1528426711647" expanded="true" signature="11494:11883" ph="insert into `essay`... " />
+            <marker date="1528426711647" expanded="true" signature="11968:13508" ph="update essay... " />
+            <marker date="1528426711647" expanded="true" signature="11968:13548" ph="update essay... " />
+            <marker date="1528426711647" expanded="true" signature="13640:13700" ph="delete from `essay`... " />
+            <marker date="1528426711647" expanded="true" signature="13790:13979" ph="update essay... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/mapper/RecommendMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/Comment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding>
+            <element signature="e#1089#1090#0" expanded="false" />
+            <element signature="e#1137#1138#0" expanded="false" />
+            <element signature="e#1177#1178#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/UserMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="159" column="14" lean-forward="true" selection-start-line="159" selection-start-column="14" selection-end-line="159" selection-end-column="14" />
+          <folding>
+            <marker date="1528426712193" expanded="true" signature="1283:1335" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="1416:1450" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="1572:1707" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="1827:1950" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="2070:2193" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="2317:2403" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="2317:2453" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="2575:2711" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="2699:2711" ph="select * fro... user" />
+            <marker date="1528426712193" expanded="true" signature="4258:4584" ph="insert into `user`... " />
+            <marker date="1528426712193" expanded="true" signature="4667:6316" ph="update user... " />
+            <marker date="1528426712193" expanded="true" signature="6407:6463" ph="delete from `user`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/common/utils/SvcUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ICommentSvc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="134" column="32" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/IEssaySvc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/EssayController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="504" column="56" lean-forward="false" selection-start-line="504" selection-start-column="56" selection-end-line="504" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/CommentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="45" column="68" lean-forward="false" selection-start-line="45" selection-start-column="57" selection-end-line="45" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/CommentSvcImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding>
+            <element signature="e#7596#7597#0" expanded="false" />
+            <element signature="e#7655#7656#0" expanded="false" />
+            <element signature="e#7721#7722#0" expanded="false" />
+            <element signature="e#7782#7783#0" expanded="false" />
+            <element signature="e#7848#7849#0" expanded="false" />
+            <element signature="e#7906#7907#0" expanded="false" />
+            <element signature="e#7949#7950#0" expanded="false" />
+            <element signature="e#7987#7988#0" expanded="false" />
+            <element signature="e#8050#8051#0" expanded="false" />
+            <element signature="e#8104#8105#0" expanded="false" />
+            <element signature="e#8147#8148#0" expanded="false" />
+            <element signature="e#8181#8182#0" expanded="false" />
+            <element signature="e#8240#8241#0" expanded="false" />
+            <element signature="e#8286#8287#0" expanded="false" />
+            <element signature="e#8333#8334#0" expanded="false" />
+            <element signature="e#8369#8370#0" expanded="false" />
+            <element signature="e#8434#8435#0" expanded="false" />
+            <element signature="e#8484#8485#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/impl/EssaySvcImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="207" column="9" lean-forward="false" selection-start-line="207" selection-start-column="9" selection-end-line="207" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#7841#7842#0" expanded="false" />
+            <element signature="e#7898#7899#0" expanded="false" />
+            <element signature="e#7962#7963#0" expanded="false" />
+            <element signature="e#8016#8017#0" expanded="false" />
+            <element signature="e#8059#8060#0" expanded="false" />
+            <element signature="e#8097#8098#0" expanded="false" />
+            <element signature="e#8160#8161#0" expanded="false" />
+            <element signature="e#8214#8215#0" expanded="false" />
+            <element signature="e#8257#8258#0" expanded="false" />
+            <element signature="e#8291#8292#0" expanded="false" />
+            <element signature="e#8350#8351#0" expanded="false" />
+            <element signature="e#8396#8397#0" expanded="false" />
+            <element signature="e#8439#8440#0" expanded="false" />
+            <element signature="e#8473#8474#0" expanded="false" />
+            <element signature="e#8532#8533#0" expanded="false" />
+            <element signature="e#8578#8579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/RecommendMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1528426710880" expanded="true" signature="860:899" ph="select * fro... recommend" />
+            <marker date="1528426710880" expanded="true" signature="1070:1116" ph="SELECT COUNT... recommend" />
+            <marker date="1528426710880" expanded="true" signature="1245:1348" ph="insert into `recommend`... " />
+            <marker date="1528426710880" expanded="true" signature="1441:1862" ph="update recommend... " />
+            <marker date="1528426710880" expanded="true" signature="1958:2034" ph="delete from `recommend`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pojo/Collection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-mybatis/GoldMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1528426712876" expanded="true" signature="967:1001" ph="select * fro... gold" />
+            <marker date="1528426712876" expanded="true" signature="1162:1203" ph="SELECT COUNT... gold" />
+            <marker date="1528426712876" expanded="true" signature="1322:1497" ph="insert into `gold`... " />
+            <marker date="1528426712876" expanded="true" signature="1580:2118" ph="update gold... " />
+            <marker date="1528426712876" expanded="true" signature="2209:2278" ph="delete from `gold`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-activemq.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-mybatis.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="20" column="45" lean-forward="false" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config-spring/spring-service.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cfg_local.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="54" column="26" lean-forward="false" selection-start-line="54" selection-start-column="26" selection-end-line="54" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="169" column="16" lean-forward="true" selection-start-line="169" selection-start-column="16" selection-end-line="169" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>forum:war exploded</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web (forum)|Web</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Web|forum</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: alipay.sdk:alipay-sdk-java20161031120103:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

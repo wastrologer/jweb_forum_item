@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.UserMapper">
+
+<!--
+    <resultMap id="UserMap" type="User" >
+        <id column="user_id" property="userId" jdbcType="INTEGER" />
+        <result column="auth_id" property="authId" jdbcType="VARCHAR" />
+        <result column="region_id" property="regionId" jdbcType="INTEGER" />
+        <result column="user_name" property="userName" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
+        <result column="user_pic" property="userPicture" jdbcType="VARCHAR" />
+        <result column="user_gold" property="userGold" jdbcType="INTEGER" />
+        <result column="user_coin" property="userCoin" jdbcType="INTEGER" />
+        <result column="invite_code" property="inviteCode" jdbcType="VARCHAR" />
+        <result column="signature" property="signature" jdbcType="VARCHAR" />
+        <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    </resultMap>
+-->
+    <select id="selectUser" resultType="com.pojo.User" parameterType="java.lang.Integer" >
+    select
+    *
+    from user
+    where user_id = #{id}
+    </select>
+    <select id="getAllUser" resultType="com.pojo.User"  >
+        select
+        *
+        from user
+    </select>
+    <select id="getUserByRegionName" resultType="com.pojo.User" parameterType="java.lang.String" >
+        select
+        *
+        from user
+        INNER JOIN region ON user.region_id=region.region_id
+        AND region.region_name=#{name }
+    </select>
+    <select id="getUserByAuthName" resultType="com.pojo.User" parameterType="java.lang.String" >
+        select
+        *
+        from user
+        INNER JOIN auth ON user.auth_id=auth.auth_id
+        AND auth.auth_name=#{NAME }
+    </select>
+    <select id="getUserByAuthType" resultType="com.pojo.User" parameterType="java.lang.String" >
+        select
+        *
+        from user
+        INNER JOIN auth ON user.auth_id=auth.auth_id
+        AND auth.auth_type=#{type }
+    </select>
+    <select id="getUserByConcernFrom" resultType="com.pojo.User" parameterType="java.lang.Integer" >
+        select
+        *
+        from user
+        INNER JOIN concern ON user.user_id=concern.user_to_id
+        AND concern.user_from_id=#{id }
+    </select>
+    <select id="getUserByConcernTo" resultType="com.pojo.User" parameterType="java.lang.Integer" >
+        select
+        *
+        from user
+        INNER JOIN concern ON user.user_id=concern.user_from_id
+        AND concern.user_to_id=#{id }
+   </select>
+    <select id="getUserOrderByFans" resultType="com.pojo.User" >
+        select
+        *
+        from user
+        ORDER BY fans DESC
+    </select>
+    <select id="getUserByIds" resultType="com.pojo.User" parameterType="java.util.Set">
+        select
+        *
+        from user
+        WHERE user_id in
+        <foreach collection="userIds" item="userId" open="(" close=")" separator=",">
+            #{userId}
+        </foreach>
+    </select>
+    <select id="getUserByFuzzyCondition" resultType="com.pojo.User" parameterType="com.pojo.User" >
+        select
+        *
+        from user
+        <where>
+            1=1
+            <if test="userId != null ">
+                AND user_id like CONCAT('%',#{userId},'%' )
+            </if>
+            <if test="phoneNumber != null and phoneNumber !=''">
+                AND phone_number like CONCAT('%',#{phoneNumber},'%' )
+            </if>
+            <if test="userName != null and userName !=''">
+                AND user_name like CONCAT('%',#{userName},'%' )
+            </if>
+            <if test="inviteCode != null and inviteCode !=''">
+                AND invite_code like CONCAT('%',#{inviteCode},'%' )
+            </if>
+            <if test=" nickname!= null and nickname !=''">
+                AND nickname like CONCAT('%',#{nickname},'%' )
+            </if>
+        </where>
+    </select>
+    <select id="getUserByAccurateCondition" resultType="com.pojo.User" parameterType="com.pojo.User" >
+        select
+        *
+        from user
+        <where>
+            1=1
+            <if test="userId != null and userId !=''">
+                AND user_id =#{userId}
+            </if>
+            <if test="phoneNumber != null and phoneNumber !=''">
+                AND phone_number=#{phoneNumber}
+            </if>
+            <if test="userName != null and userName !=''">
+                AND user_name =#{userName}
+            </if>
+            <if test="inviteCode != null and inviteCode !=''">
+                AND invite_code=#{inviteCode}
+            </if>
+            <if test=" nickname!= null and nickname !=''">
+                AND nickname =#{nickname}
+            </if>
+        </where>
+    </select>
+    <insert id="addUser"  parameterType="com.pojo.User"  >
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="authId != null" >
+                auth_id,
+            </if>
+            <if test="regionId != null" >
+                region_id,
+            </if>
+            <if test="userName != null" >
+                user_name,
+            </if>
+            <if test="password != null" >
+                password,
+            </if>
+            <if test="phoneNumber != null" >
+                phone_number,
+            </if>
+            <if test="userPic != null" >
+                user_pic,
+            </if>
+            <if test="userGold != null" >
+                user_gold,
+            </if>
+            <if test="userCoin != null" >
+                user_coin,
+            </if>
+            <if test="inviteCode != null" >
+                invite_code,
+            </if>
+            <if test="signature != null" >
+                signature,
+            </if>
+            <if test="nickname != null" >
+                nickname,
+            </if>
+            <if test="inviteNum != null" >
+                invite_num,
+            </if>
+            <if test="concern != null" >
+                concern,
+            </if>
+            <if test="fans != null" >
+                fans,
+            </if>
+            <if test="backdrop != null" >
+                backdrop,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+            <if test="inviteUserId != null" >
+                invite_user_id,
+            </if>
+            <if test="userType != null" >
+                user_type,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="authId != null" >
+                #{authId,jdbcType=VARCHAR},
+            </if>
+            <if test="regionId != null" >
+                #{regionId,jdbcType=INTEGER},
+            </if>
+            <if test="userName != null" >
+                #{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null" >
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="phoneNumber != null" >
+                #{phoneNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="userPic != null" >
+                #{userPic,jdbcType=VARCHAR},
+            </if>
+            <if test="userGold != null" >
+                #{userGold,jdbcType=INTEGER},
+            </if>
+            <if test="userCoin != null" >
+                #{userCoin,jdbcType=INTEGER},
+            </if>
+            <if test="inviteCode != null" >
+                #{inviteCode,jdbcType=VARCHAR},
+            </if>
+            <if test="signature != null" >
+                #{signature,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null" >
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="inviteNum != null" >
+                #{inviteNum,jdbcType=INTEGER},
+            </if>
+            <if test="concern != null" >
+                #{concern,jdbcType=INTEGER},
+            </if>
+            <if test="fans != null" >
+                #{fans,jdbcType=INTEGER},
+            </if>
+            <if test="backdrop != null" >
+                #{backdrop,jdbcType=VARCHAR},
+            </if>
+
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="inviteUserId != null" >
+                #{inviteUserId,jdbcType=BIGINT},
+            </if>
+            <if test="userType != null" >
+                #{userType,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateUser" parameterType="com.pojo.User">
+        update user
+        <set>
+            <if test="authId != null ">
+                user.auth_id = #{authId},
+            </if>
+            <if test="regionId != null ">
+                user.region_id =#{regionId},
+            </if>
+            <if test="userName != null ">
+                user.user_name =#{userName},
+            </if>
+            <if test="password != null ">
+                user.password =#{password},
+            </if>
+            <if test="phoneNumber != null ">
+                user.phone_number = #{phoneNumber},
+            </if>
+            <if test="userPic != null ">
+                user.user_pic = #{userPic},
+            </if>
+            <if test="backdrop != null ">
+                user.backdrop = #{backdrop},
+            </if>
+            <if test="userGold != null ">
+                user.user_gold =user.user_gold+#{userGold},
+            </if>
+            <if test="userCoin != null ">
+                user.user_coin =user.user_coin+#{userCoin},
+            </if>
+            <if test="inviteNum != null ">
+                user.invite_num =user.invite_num+#{inviteNum},
+            </if>
+            <if test="inviteCode != null ">
+                user.invite_code = #{inviteCode},
+            </if>
+            <if test="signature != null ">
+                user.signature = #{signature},
+            </if>
+            <if test="nickname != null ">
+                user.nickname =#{nickname},
+            </if>
+            <if test="concern != null ">
+                user.concern =user.concern+#{concern},
+            </if>
+            <if test="fans != null ">
+                user.fans =user.fans +#{fans}
+            </if>
+            <if test="loginTime != null ">
+                user.login_time =#{loginTime}
+            </if>
+        </set>
+        where user.user_id =#{userId}
+    </update>
+
+    <delete id="deleteUserById" parameterType="java.lang.Integer">
+        delete from `user`
+        where user.user_id =#{userId}
+    </delete>
+</mapper>

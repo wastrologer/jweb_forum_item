@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- 自动扫描mybatis mapper -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="userSessionFactory" />
+        <property name="basePackage" value="com.dao"/>
+        <!--
+                <property name="markerInterface" value="com.racing.common.mybatis.BaseMapper" />
+        -->
+    </bean>
+    <!-- 扫描service包下所有使用注解的类型 -->
+    <context:component-scan base-package="com.service"/>
+
+    <!-- 配置数据库相关参数properties的属性：${url} -->
+    <bean  id="PropertyPlaceholder1" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:cfg_${cfg.env}.properties</value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+    </bean>
+    <!-- 数据库连接池 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="maxPoolSize" value="60"/>
+        <property name="minPoolSize" value="10"/>
+        <property name="initialPoolSize" value="10"/>
+        <property name="autoCommitOnClose" value="false"/>
+        <property name="checkoutTimeout" value="10000"/>
+        <property name="acquireRetryAttempts" value="2"/>
+    </bean>
+
+<!--    &lt;!&ndash; 配置SqlSessionFactory对象 &ndash;&gt;
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        &lt;!&ndash; 注入数据库连接池 &ndash;&gt;
+        <property name="dataSource" ref="dataSource"/>
+        &lt;!&ndash; 扫描model包 使用别名 &ndash;&gt;
+        <property name="typeAliasesPackage" value="com.pojo"/>
+        &lt;!&ndash; 扫描sql配置文件:mapper需要的xml文件 &ndash;&gt;
+        <property name="mapperLocations" value="classpath:config-mybatis/*.xml"/>
+    </bean>
+
+    &lt;!&ndash; 配置扫描Dao接口包，动态实现Dao接口，注入到spring容器中 &ndash;&gt;
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        &lt;!&ndash; 注入sqlSessionFactory &ndash;&gt;
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        &lt;!&ndash; 给出需要扫描Dao接口包 &ndash;&gt;
+        <property name="basePackage" value="com.dao"/>
+    </bean>-->
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!-- 配置基于注解的声明式事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+<!--    &lt;!&ndash; com.github.pagehelper为PageHelper类所在包名 &ndash;&gt;
+    <bean id="pageHelper" class="com.racing.common.mybatis.pagehelper.PageHelper">
+        <property name="properties">
+            <props>
+                <prop key="dialect">mysql</prop>
+                <prop key="offsetAsPageNum">true</prop>
+                <prop key="rowBoundsWithCount">true</prop>
+                <prop key="pageSizeZero">true</prop>
+                <prop key="reasonable">true</prop>
+            </props>
+        </property>
+    </bean>-->
+
+    <!-- xml 配置的方式 -->
+    <bean id="userSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:config-mybatis/mybatis-config.xml"></property>
+        <property name="mapperLocations" value="classpath*:config-mybatis/*Mapper.xml"></property>
+        <property name="dataSource" ref="dataSource" />
+        <!-- 配置分页插件 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            reasonable=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+
+</beans>
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.RecommendMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="recommendId != null ">
+                AND recommend.recommend_id = #{recommendId}
+            </if>
+            <if test="userId != null ">
+                AND recommend.user_id =#{userId}
+            </if>
+            <if test="essayId != null ">
+                AND recommend.essay_id =#{essayId}
+            </if>
+            <if test="commentId != null ">
+                AND recommend.comment_id =#{commentId}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getRecommendByCondition" resultType="com.pojo.Recommend" parameterType="com.pojo.Recommend" >
+        select
+        *
+        from recommend
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countRecommendByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Recommend" >
+        SELECT
+        COUNT(*)
+        from recommend
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addRecommend"  parameterType="com.pojo.Recommend"  >
+        insert into recommend
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="recommendId != null" >
+                recommend_id,
+            </if>
+            <if test="userId != null" >
+                user_id,
+            </if>
+            <if test="essayId != null" >
+                essay_id,
+            </if>
+            <if test="commentId != null" >
+                comment_id,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="recommendId != null" >
+                #{recommendId,jdbcType=BIGINT},
+            </if>
+            <if test="userId != null" >
+                #{userId,jdbcType=BIGINT},
+            </if>
+            <if test="essayId != null" >
+                #{essayId,jdbcType=BIGINT},
+            </if>
+            <if test="commentId != null" >
+                #{commentId,jdbcType=BIGINT},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateRecommend" parameterType="com.pojo.Recommend">
+        update recommend
+        <set>
+            <if test="userId != null ">
+                recommend.user_id =#{userId},
+            </if>
+            <if test="essayId != null ">
+                recommend.essay_id = #{essayId},
+            </if>
+            <if test="commentId != null ">
+               recommend.comment_id =#{commentId}
+            </if>
+        </set>
+        where recommend.recommend_id =#{recommendId}
+    </update>
+
+    <delete id="deleteRecommendById" parameterType="java.lang.Integer">
+        delete from `recommend`
+        where recommend.recommend_id =#{recommendId}
+    </delete>
+</mapper>

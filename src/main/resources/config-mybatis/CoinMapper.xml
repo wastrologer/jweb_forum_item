@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.mapper.CoinMapper">
+    <sql id="whereSql">
+        <where>
+            1=1
+            <if test="coinRecordId != null ">
+                AND coin.coin_record_id = #{coinRecordId}
+            </if>
+            <if test="coinRecordTime != null ">
+                AND coin.coin_record_time =#{coinRecordTime}
+            </if>
+            <if test="coinNum != null ">
+                AND coin.coin_num =#{coinNum}
+            </if>
+            <if test="coinUserId != null ">
+                AND coin.coin_user_id =#{coinUserId}
+            </if>
+            <if test="coinReason != null ">
+                AND coin.coin_reason =#{coinReason}
+            </if>
+        </where>
+    </sql>
+
+    <select id="getCoinByCondition" resultType="com.pojo.Coin" parameterType="com.pojo.Coin" >
+        select
+        *
+        from coin
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="countCoinByCondition" resultType="java.lang.Integer" parameterType="com.pojo.Coin" >
+        SELECT
+        COUNT(*)
+        from coin
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addCoin"  parameterType="com.pojo.Coin"  >
+        insert into coin
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="coinRecordId != null" >
+                coin_record_id,
+            </if>
+            <if test="coinRecordTime != null" >
+                coin_record_time,
+            </if>
+            <if test="coinNum != null" >
+                coin_num,
+            </if>
+            <if test="coinUserId != null" >
+                coin_user_id,
+            </if>
+            <if test="coinReason != null" >
+                coin_reason,
+            </if>
+            <if test="createTime != null" >
+                create_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="coinRecordId != null" >
+                #{coinRecordId,jdbcType=INTEGER},
+            </if>
+            <if test="coinRecordTime != null" >
+                #{coinRecordTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="coinNum != null" >
+                #{coinNum,jdbcType=INTEGER},
+            </if>
+            <if test="coinUserId != null" >
+                #{coinUserId,jdbcType=INTEGER},
+            </if>
+            <if test="coinReason != null" >
+                #{coinReason,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null" >
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateCoin" parameterType="com.pojo.Coin">
+        update coin
+        <set>
+            <if test="coinRecordTime != null">
+                coin.coin_record_time =#{coinRecordTime},
+            </if>
+            <if test="coinNum != null ">
+                coin.coin_num =#{coinNum},
+            </if>
+            <if test="coinUserId != null ">
+                coin.coin_user_id =#{coinUserId},
+            </if>
+            <if test="coinReason != null ">
+                coin.coin_reason =#{coinReason}
+            </if>
+        </set>
+        where coin.coin_record_id =#{coinRecordId}
+    </update>
+
+    <delete id="deleteCoinById" parameterType="java.lang.Integer">
+        delete from `coin`
+        where coin.coin_record_id =#{coinRecordId}
+    </delete>
+</mapper>
