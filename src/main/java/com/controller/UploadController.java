@@ -369,7 +369,7 @@ public class UploadController {
 						logger.info("wight=" + imageWidthHeight[0] +",height=" + imageWidthHeight[1]);
 						ImageWarterUtil.setImageMarkOptions(1f, (imageWidthHeight[0]+imageWidthHeight[1])/200+10,
 								(imageWidthHeight[0]+imageWidthHeight[1])/200, null, null);
-						ImageWarterUtil.addWaterMark(destFilePath,destFilePath,user.getNickname());
+						ImageWarterUtil.addWaterMark(destFilePath,destFilePath,"http://www.youwen520.com");
 						//ImageWarterUtil.markImageByText(iconPath, destFilePath, destFilePath);
 						ImageWarterUtil.markImageByIcon(user.getUserId(),newIconPath,iconPath, destFilePath, destFilePath,true,0);
 					}

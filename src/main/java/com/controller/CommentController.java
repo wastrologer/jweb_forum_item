@@ -1,13 +1,12 @@
 package com.controller;
 
 import com.common.cache.CacheClient;
-import com.common.entity.ReturnMessage;
-import com.common.mq.MsgCommandId;
 import com.common.mq.MsgProducer;
 import com.common.utils.SvcUtils;
 import com.constant.ErrorCode;
 import com.github.pagehelper.PageInfo;
 import com.pojo.Comment;
+import com.pojo.Essay;
 import com.pojo.User;
 import com.pojo.UserToken;
 import com.service.ICommentSvc;
@@ -86,15 +85,15 @@ public class CommentController extends BaseController {
                 if(user!=null){
                     Integer res=commentSvcImpl.addComment(user,comment);
                     if(res==1){
-/*                        Essay pe=new Essay();
+                        Essay pe=new Essay();
                         pe.setEssayId(comment.getEssayId());
                         pe.setCommentNum(1);
-                        Integer updateNum = essaySvcImpl.updateEssay(pe);*/
-                        ReturnMessage msg=new ReturnMessage();
+                        Integer updateNum = essaySvcImpl.updateEssay(pe);
+/*                        ReturnMessage msg=new ReturnMessage();
                         msg.setEssayId(comment.getEssayId());
                         msg.setAddCommentNum(1);
-                        msgProducer.send(MsgCommandId.FORUM_ESSAY_COMMENTNUM_ID,msg);
-                        Integer updateNum = 1;
+                        msgProducer.send(MsgCommandId.FORUM_ESSAY_COMMENTNUM_ID,msg);*/
+                        //Integer updateNum = 1;
                         if(updateNum!=null&&updateNum==1)
                             return getSuccessMap();
                     }
@@ -127,28 +126,28 @@ public class CommentController extends BaseController {
                     if(!recommended){
                         addNum=svcUtils.addRecommend(user.getUserId(),null,commentId);
                         if (addNum==1) {
-/*                            Comment pc=new Comment();
+                            Comment pc=new Comment();
                             pc.setCommentId(commentId);
                             pc.setRecommendNum(1);
-                            updateNum = commentSvcImpl.updateComment(pc);*/
-                            ReturnMessage msg=new ReturnMessage();
+                            updateNum = commentSvcImpl.updateComment(pc);
+/*                            ReturnMessage msg=new ReturnMessage();
                             msg.setCommentId(commentId);
                             msg.setAddRecommendNum(1);
                             msgProducer.send(MsgCommandId.FORUM_COMMENT_RECOMMENDNUM_ID,msg);
-                            updateNum = 1;
+                            updateNum = 1;*/
                         }
                     }else {
                         addNum=svcUtils.deleteRecommend(user.getUserId(),null,commentId);
                         if (addNum==1) {
-/*                            Comment pc=new Comment();
+                            Comment pc=new Comment();
                             pc.setCommentId(commentId);
                             pc.setRecommendNum(-1);
-                            updateNum = commentSvcImpl.updateComment(pc);*/
-                            ReturnMessage msg=new ReturnMessage();
+                            updateNum = commentSvcImpl.updateComment(pc);
+/*                            ReturnMessage msg=new ReturnMessage();
                             msg.setCommentId(commentId);
                             msg.setAddRecommendNum(-1);
                             msgProducer.send(MsgCommandId.FORUM_COMMENT_RECOMMENDNUM_ID,msg);
-                            updateNum = 1;
+                            updateNum = 1;*/
                         }
                     }
                     logger.info("recommendComment:\n-------------add----------:"+addNum+"\n---------update-------:"+updateNum);

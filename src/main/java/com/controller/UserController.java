@@ -86,6 +86,22 @@ public class UserController extends BaseController {
         return map;
     }
 
+    /*
+    查看我的关注/粉丝
+*/
+    @RequestMapping("/getAllPlatformContact")
+    @ResponseBody
+    public Map<String, Object> getAllPlatformContact(){
+        try {
+            List<PlatformContact> ps=svcUtils.getAllPlatformContact();
+            return getStrMap(ps,ps.size());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Map<String, Object> map = getErrorMap(e.getClass().getName());
+            return map;
+        }
+    }
+
     /*名人堂
     * 1首页上滑动的
 2单独打开页面*/

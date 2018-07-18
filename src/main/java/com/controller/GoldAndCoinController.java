@@ -42,7 +42,7 @@ public class GoldAndCoinController extends BaseController {
                     Gold pg=new Gold();
                     pg.setGoldUserId(user.getUserId());
                     PageInfo pageInfo=goldAndCoinSvcImpl.getGoldByConditionAndPage(pg,num,size);
-                    return getStrMap(pageInfo);
+                    return getStrMap(pageInfo.getList(), (int) pageInfo.getTotal(),"totalGold",user.getUserGold());
                 }
             }
         } catch (Exception e) {
@@ -67,7 +67,8 @@ public class GoldAndCoinController extends BaseController {
                     Coin pc=new Coin();
                     pc.setCoinUserId(user.getUserId());
                     PageInfo pageInfo=goldAndCoinSvcImpl.getCoinByConditionAndPage(pc,num,size);
-                    return getStrMap(pageInfo);
+                    return getStrMap(pageInfo.getList(), (int) pageInfo.getTotal(),"totalCoin",user.getUserCoin());
+                    //return getStrMap(pageInfo);
                 }
             }
         } catch (Exception e) {

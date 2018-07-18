@@ -15,7 +15,7 @@ public class ImageValidateCode {
     // 图片的高度。
     private int height = 40;
     // 验证码字符个数
-    private int codeCount = 4;
+    private int codeCount = 3;
     // 验证码干扰线数
     private int lineCount = 150;
     // 验证码
@@ -100,9 +100,9 @@ public class ImageValidateCode {
             int ye = ys + random.nextInt(height / 8);//y坐标结束
 
             // 产生随机的颜色值，让输出的每个干扰线的颜色值都将不同。
-            red = random.nextInt(255);
-            green = random.nextInt(255);
-            blue = random.nextInt(255);
+            red = random.nextInt(100)+150;
+            green = random.nextInt(100)+150;
+            blue = random.nextInt(100)+150;
             g.setColor(new Color(red, green, blue));
             g.drawLine(xs, ys, xe, ye);
         }
@@ -129,9 +129,9 @@ public class ImageValidateCode {
         for (int i = 0; i < codeCount; i++) {
             String strRand = String.valueOf(codeSequence[random.nextInt(codeSequence.length)]);
             // 产生随机的颜色值，让输出的每个字符的颜色值都将不同。
-            red = random.nextInt(255);
-            green = random.nextInt(255);
-            blue = random.nextInt(255);
+            red = random.nextInt(100);
+            green = random.nextInt(100);
+            blue = random.nextInt(100);
             g.setColor(new Color(red, green, blue));
             g.drawString(strRand, (i + 1) * x, codeY);
             // 将产生的四个随机数组合在一起。

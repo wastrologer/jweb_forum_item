@@ -18,7 +18,8 @@ import java.util.*;
 public class SvcUtils {
 
     protected static final Logger logger = LoggerFactory.getLogger(SvcUtils.class);
-
+    @Resource
+    PlatformContactMapper platformContactMapper;
     @Resource
     ConcernMapper concernMapper;
 
@@ -53,7 +54,9 @@ public class SvcUtils {
         regionMapper=regionMapper1;
         messageMapper=messageMapper1;
     }*/
-
+    public List<PlatformContact> getAllPlatformContact(){
+        return platformContactMapper.selectAll();
+    }
     public  <T> T judgeResultList(List<T> result){
         if(result.size()==1){
             return result.get(0);

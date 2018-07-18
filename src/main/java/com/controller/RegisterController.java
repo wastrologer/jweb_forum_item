@@ -72,7 +72,7 @@ public class RegisterController extends BaseController {
 
             ImageValidateCode vCode = null;
             if (smsCountVoGetsResponse == null) {
-                vCode = new ImageValidateCode(130,40,5,200);
+                vCode = new ImageValidateCode(135,38,5,200);
 
                 ImageCode imc = new ImageCode();
                 imc.setContent(vCode.getImageCode());
@@ -87,7 +87,7 @@ public class RegisterController extends BaseController {
                 ImageCodeCount = (ImageCodeCount) smsCountVoGetsResponse.getValue();
                 if (ImageCodeCount.getCount() < Constants.DEFAULT_DAY_MAX_IMAGE_CODE) {
                     ImageCode imc = (ImageCode) cacheClient.get(Constants.IMAGE_CODE_DETAIL_KEY_STR + ip);
-                    vCode = new ImageValidateCode(120,40,5,200);
+                    vCode = new ImageValidateCode(135,38,5,200);
                     if (imc == null) {
                         imc = new ImageCode();
                         imc.setTimestamp(HelperUtil.getSecondStamp());

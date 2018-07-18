@@ -2,8 +2,6 @@ package com.controller;
 
 import com.common.cache.CacheClient;
 import com.common.entity.Constants;
-import com.common.entity.ReturnMessage;
-import com.common.mq.MsgCommandId;
 import com.common.mq.MsgProducer;
 import com.common.utils.StringUtil;
 import com.common.utils.SvcUtils;
@@ -166,12 +164,12 @@ public class EssayController extends BaseController {
                     List<Integer> ids=new ArrayList<>();
                     Integer published=null;
                     //是否本人
-                    if(id!=null&user.getUserId()!=id){
+                    if(id!=null&&user.getUserId()!=(int)id){
                         published=1;
                     }else{
-                        essayParam.setIsHiden(null);
                         published=isPublished;
                     }
+                    essayParam.setIsHiden(1);
                     if(id==null){
                         ids.add(user.getUserId());
                     }else{
@@ -180,8 +178,10 @@ public class EssayController extends BaseController {
                     essayParam.setUserIdList(ids);
                     essayParam.setIsPublished(published);
                     List<Integer>typeList =new ArrayList<>();
-                    if(essayType!=null&&essayType==1){
-                        typeList.add(4);
+                    typeList.add(essayType);
+
+                    if(essayType!=null){
+                        typeList.add(essayType);
                     }else{
                         typeList.add(1);
                         typeList.add(2);
@@ -219,8 +219,11 @@ public class EssayController extends BaseController {
                     //是否本人
                     Essay essay=essaySvcImpl.getEssayByEssayId(essayId);
 
-                    if(user.getUserId()!=essay.getUserId()&&(essay.getIsPublished()!=1||essay.getIsHiden()!=1)){
+                    if(user.getUserId()!=(int)essay.getUserId()&&essay.getIsPublished()!=1){
                         return getErrorMap(ErrorCode.ESSAY_NOT_PUBLISHED,"文章不存在");
+                    }
+                    if(essay.getIsHiden()!=1){
+                        return getErrorMap(ErrorCode.ESSAY_NOT_PUBLISHED,"文章被隐藏");
                     }
                     Essay pe=new Essay();
                     pe.setEssayId(essayId);
@@ -228,14 +231,14 @@ public class EssayController extends BaseController {
                     //essay=essaySvcImpl.getEssayByAccurateCondition(pe);
                     //clicknum+1,已发布
                     if(essay.getIsPublished()!=null&&essay.getIsPublished()==1){
-/*                        pe=new Essay();
+                        pe=new Essay();
                         pe.setEssayId(essayId);
                         pe.setClickNum(1);
-                        int i=essaySvcImpl.updateEssayByOthers(pe);*/
-                        ReturnMessage msg=new ReturnMessage();
+                        int i=essaySvcImpl.updateEssayByOthers(pe);
+/*                        ReturnMessage msg=new ReturnMessage();
                         msg.setEssayId(essayId);
                         msg.setAddClickNum(1);
-                        msgProducer.send(MsgCommandId.FORUM_ESSAY_CLICKNUM_ID,msg);
+                        msgProducer.send(MsgCommandId.FORUM_ESSAY_CLICKNUM_ID,msg);*/
                         logger.info("updateEssayClickNum(pe)");
                     }
                     essay.setUserPic(user.getUserPic());
@@ -265,6 +268,7 @@ public class EssayController extends BaseController {
             if(uk!=null){
                 User user= userSvcImpl.getUserById((int)uk.getUserId());
                 Essay pe=new Essay();
+                pe.setIsHiden(null);
                 pe.setEssayId(id);
                 Essay essay=essaySvcImpl.getEssayByAccurateCondition(pe);
                 if(user!=null&&essay!=null&&user.getUserId()==(int)essay.getUserId()){
@@ -699,28 +703,28 @@ public class EssayController extends BaseController {
                     if(!recommended){
                         addNum=svcUtils.addRecommend(user.getUserId(),essayId,null);
                         if (addNum==1) {
-/*                            Essay pe=new Essay();
+                            Essay pe=new Essay();
                             pe.setEssayId(essayId);
                             pe.setRecommendNum(1);
-                            updateNum = essaySvcImpl.updateEssay(pe);*/
-                            ReturnMessage msg=new ReturnMessage();
+                            updateNum = essaySvcImpl.updateEssay(pe);
+/*                            ReturnMessage msg=new ReturnMessage();
                             msg.setEssayId(essayId);
                             msg.setAddRecommendNum(1);
                             msgProducer.send(MsgCommandId.FORUM_ESSAY_RECOMMENDNUM_ID,msg);
-                            updateNum = 1;
+                            updateNum = 1;*/
                         }
                     }else {
                         addNum=svcUtils.deleteRecommend(user.getUserId(),essayId,null);
                         if (addNum==1) {
-/*                            Essay pe=new Essay();
+                            Essay pe=new Essay();
                             pe.setEssayId(essayId);
                             pe.setRecommendNum(-1);
-                            updateNum = essaySvcImpl.updateEssay(pe);*/
-                            ReturnMessage msg=new ReturnMessage();
+                            updateNum = essaySvcImpl.updateEssay(pe);
+/*                            ReturnMessage msg=new ReturnMessage();
                             msg.setEssayId(essayId);
                             msg.setAddRecommendNum(-1);
                             msgProducer.send(MsgCommandId.FORUM_ESSAY_RECOMMENDNUM_ID,msg);
-                            updateNum = 1;
+                            updateNum = 1;*/
                         }
                     }
                     logger.info("recommendEssay:\n-------------add----------:"+addNum+"\n---------update-------:"+updateNum);

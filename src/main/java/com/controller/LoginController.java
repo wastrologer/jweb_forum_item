@@ -96,7 +96,9 @@ public class LoginController extends BaseController {
             }
 
             User user = userSvcImpl.getUserByPhoneNumber(telephone);
-
+            if(user.getIsDisable()!=2){
+                return getErrorMap(ErrorCode.IS_BLACK_USER,"黑名单用户");
+            }
             String smsKey = Constants.SMS_LOGIN_PASSWD_KEY_STR + telephone;
             SMSVo smsVo = (SMSVo) cacheClient.get(smsKey);
             if (isNeedAuthCode.equals("1") || smsCode.equals("0000")) {
@@ -154,7 +156,10 @@ public class LoginController extends BaseController {
             map.put("msg", "用户不存在！");
             return map;
         }
-
+        //User u=userSvcImpl.getUserByUserName(data.getString("userName"));
+        if(user.getIsDisable()!=2){
+            return getErrorMap(ErrorCode.IS_BLACK_USER,"黑名单用户");
+        }
         if (isLogin == 1) {
             method.addRequestHeader("Authorization", request.getHeader("Authorization"));
         }

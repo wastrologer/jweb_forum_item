@@ -36,6 +36,15 @@ public class User {
         return mutualConcerned;
     }
     private Timestamp loginTime;
+    private Integer isDisable;//不填，1不可用，2可用（是否拉黑）
+
+    public Integer getIsDisable() {
+        return isDisable;
+    }
+
+    public void setIsDisable(Integer isDisable) {
+        this.isDisable = isDisable;
+    }
 
     public Timestamp getLoginTime() {
         return loginTime;
